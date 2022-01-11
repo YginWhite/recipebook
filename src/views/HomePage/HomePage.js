@@ -7,11 +7,13 @@ import Footer from '../../components/layouts/Footer/Footer';
 
 const HomePage = () => {
 	return (
-		<div>
-			<Header/>
-      <Main/>
-      <Aside/>
-      <Footer/>
+		<div className="home-page">
+			<div>
+				<Header/>
+      	<Main/>
+      	<Aside/>
+      	<Footer/>
+			</div>
 		</div>
 	);
 };
