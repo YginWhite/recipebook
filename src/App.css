@@ -44,7 +44,14 @@
   color: #404040;
 }
 
+/* Main compnent styles */
+.main-layout {
 
+}
+
+.main-layout > .flex {
+  display: flex;
+}
 
 /* DishType compnent styles */
 .dish-type {
@@ -83,3 +90,17 @@
 .dish-type li.selected:before {
   background-color: #408EBA;
 }
+
+/* Recipe component style */
+.recipe {
+  width: 623.7px;
+  margin-left: 26.98px;
+  border-radius: 19.42px;
+  background-color: white;
+}
+
+.recipe > div {
+  margin: 6.89px 8.63px;
+  border-radius: 19.42px;
+  background-color: #F0F7FF;
+} 

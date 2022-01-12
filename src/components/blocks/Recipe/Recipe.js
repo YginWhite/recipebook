@@ -6,12 +6,13 @@ import Image from './Image/Image';
 
 const Recipe = () => {
 	return (
-		<div>
-			Recipe
-			<Summary/>
-			<Ingredients/>
-			<Nutrients/>
-			<Image/>
+		<div className='recipe'>
+			<div>
+				<Summary/>
+				<Ingredients/>
+				<Nutrients/>
+				<Image/>
+			</div>
 		</div>
 	);
 };
