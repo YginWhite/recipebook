@@ -103,4 +103,24 @@
   margin: 6.89px 8.63px;
   border-radius: 19.42px;
   background-color: #F0F7FF;
-} 
+}
+
+/* Summary component styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.summary {
+  width: 451.05px;
+  padding-top: 16.14px;
+  margin-left: 11.42px;
+}
+
+.summary .header {
+  font-family: 'Arima Madurai', cursive;
+  font-size: 23.98px;
+}
+
+.summary .body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13.21px;
+  color: #404040;
+}
