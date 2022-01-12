@@ -7,3 +7,5 @@ https://www.xenonstack.com/insights/reactjs-project-structure
 https://www.taniarascia.com/react-architecture-directory-structure
 
 https://fonts.google.com/specimen/Arima+Madurai
+
+https://stackoverflow.com/questions/40205702/how-to-write-vertical-text-from-bottom-to-top-without-using-transform-rotate

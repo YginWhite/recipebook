@@ -6,10 +6,14 @@ import Recipes from '../../blocks/Recipes/Recipes';
 
 const Main = () => {
 	return (
-		<div>
-			<RecipeType/>
-			<DishType/>
-			<Recipe/>
+		<div className='main-layout'>
+			<div>
+				<RecipeType/>
+			</div>
+			<div className='flex'>
+				<DishType/>
+				<Recipe/>
+			</div>
 			<Recipes/>
 		</div>
 	);

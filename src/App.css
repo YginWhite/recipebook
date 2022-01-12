@@ -43,3 +43,43 @@
 .recipe-type li.selected {
   color: #404040;
 }
+
+
+
+/* DishType compnent styles */
+.dish-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 357.17px;
+  width: 35.6px;
+  margin-left: 25.21px;
+  padding: 0;
+  list-style: none;
+}
+
+.dish-type li {
+  writing-mode: vertical-lr;
+  transform: scale(-1, -1);
+  font-family: 'Roboto', sans-serif;
+  font-size: 17.53px;
+  color: #969696;
+}
+
+.dish-type li:before {
+  content: '';
+  display: block;
+  width: 9.71px;
+  height: 9.71px;
+  margin: auto 10px auto 0;
+  border-radius: 9.71px;
+  background-color: transparent;
+}
+
+.dish-type li.selected {
+  color: #404040;
+}
+
+.dish-type li.selected:before {
+  background-color: #408EBA;
+}
