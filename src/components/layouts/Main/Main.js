@@ -7,7 +7,6 @@ import Recipes from '../../blocks/Recipes/Recipes';
 const Main = () => {
 	return (
 		<div>
-			Main
 			<RecipeType/>
 			<DishType/>
 			<Recipe/>
