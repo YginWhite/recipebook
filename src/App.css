@@ -11,3 +11,12 @@
   border-radius: 20px;
   background-color: #F0F7FF;
 }
+
+/* Logo component styles */
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@800&display=swap');
+
+.logo {
+  padding: 9.19px 0 0 24.13px;
+  font-family: 'Arima Madurai', cursive;
+  font-size: 44.24px;
+}
