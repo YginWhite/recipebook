@@ -1,3 +1,9 @@
 https://spoonacular.com/food-api/docs
 https://dribbble.com/shots/15071964-Delicacy-Free-UI-Dashboard-for-Food-Recipes
 https://www.uplabs.com/posts/food-recipe-app-ux-ui-design
+
+https://reactjs.org/docs/faq-structure.html
+https://www.xenonstack.com/insights/reactjs-project-structure
+https://www.taniarascia.com/react-architecture-directory-structure
+
+https://fonts.google.com/specimen/Arima+Madurai
