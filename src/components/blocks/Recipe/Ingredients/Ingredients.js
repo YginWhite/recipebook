@@ -3,12 +3,17 @@ import Ingredient from './Ingredient/Ingredient';
 
 const Ingredients = () => {
 	return (
-		<div>
-			Ingredients
-			<Ingredient/>
-			<Ingredient/>
-			<Ingredient/>
-			<Ingredient/>
+		<div className='ingredients'>
+			<div className='header'>Ingredients</div>
+			<div className='items'>
+				<Ingredient/>
+				<Ingredient/>
+				<Ingredient/>
+				<Ingredient/>
+			</div>
+			<div>
+				<button className='button'>View all ingredients</button>
+			</div>
 		</div>
 	);
 };

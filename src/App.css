@@ -159,3 +159,38 @@
   font-size: 8.12px;
   color: #969696;
 }
+
+/* Ingredients compnent styles */
+.ingredients {
+  margin-left: 11.42px;
+  margin-top: 18.34px;
+}
+
+.ingredients .items {
+  width: 291.55px;
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 14.95px;
+}
+
+.ingredients .header {
+  font-family: 'Arima Madurai', cursive;
+  font-size: 19.42px;
+  color: #969696;
+}
+
+.ingredients > div:last-child {
+  margin-top: 16.68px;
+}
+
+.ingredients .button {
+  padding: 7.12px 27.94px 7.82px 26.88px;
+  border: none;
+  border-radius: 4.32px;
+  background-color: #408EBA;
+  font-family: 'Roboto', sans-serif;
+  font-size: 7.99px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
