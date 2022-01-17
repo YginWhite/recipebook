@@ -1,16 +1,5 @@
-html {
-	height: 100%;
-}
-
 body {
-	height: 99%;
-	margin: 0;
-	padding: 1%;
 	box-sizing: border-box;
   background-color: #E5E5E5;
   font-size: 10px;
-}
-
-#root {
-	height: 100%;
 }
