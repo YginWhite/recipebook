@@ -293,3 +293,46 @@
   width: 426.23px;
   height: 454.29px;
 }
+
+/* RecipeSmall component styles */
+.recipe-small {
+  /*height: 162.94px;*/
+  position: relative;
+  padding-top: 32.37px;
+}
+
+.recipe-small .content {
+  box-sizing: border-box;
+  width: 142.44px;
+  height: 130.57px;
+  border: 0px solid #FFFFFF;
+  border-width: 1.69px 1.97px;
+  border-radius: 7.03px;
+  box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-small .content > div:first-child {
+  margin-top: 69.06px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15.11px;
+  text-align: center;
+}
+
+.recipe-small .content > div:last-child {
+  margin-top: 9.71px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12.95px;
+  text-align: center;
+  color: #969696;
+}
+
+.recipe-small .image {
+  position: absolute;
+  left: 22.66px;
+  bottom: 67.98px;
+}
+
+.recipe-small .image img {
+  width: 96.04px;
+  height: 94.96px;
+}
