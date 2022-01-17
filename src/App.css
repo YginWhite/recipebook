@@ -133,12 +133,18 @@
 
 .ingredient .image {
   padding: 6.16px 11.59px 7.03px 11.38px;
+  box-sizing: border-box;
   border-top: 0.51px solid white;
   border-bottom: 0.51px solid white;
   border-left: 0.68px solid white;
   border-right: 0.68px solid white;
   border-radius: 7.03px;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
+}
+
+.ingredient .image img {
+  width: 26.42px;
+  height: 26.37px;
 }
 
 .ingredient .description {
@@ -170,6 +176,7 @@
   width: 291.55px;
   display: flex;
   align-content: space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 14.95px;
 }
