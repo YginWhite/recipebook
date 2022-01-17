@@ -93,6 +93,7 @@
 
 /* Recipe component style */
 .recipe {
+  position: relative;
   width: 623.7px;
   margin-left: 26.98px;
   border-radius: 19.42px;
@@ -281,4 +282,16 @@
   border: 1.07907px solid #408EBA;
   background-color: transparent;
   color: #408EBA;
+}
+
+/* Image component styles */
+.dish-image {
+  position: absolute;
+  left: 410.05px;
+  top: 38.85px;
+}
+
+.dish-image img {
+  width: 426.23px;
+  height: 454.29px;
 }
