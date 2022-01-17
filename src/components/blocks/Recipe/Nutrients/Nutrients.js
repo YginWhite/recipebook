@@ -3,12 +3,18 @@ import Nutrient from './Nutrient/Nutrient';
 
 const Nutrients = () => {
 	return (
-		<div>
-			Nutrients
-			<Nutrient/>
-			<Nutrient/>
-			<Nutrient/>
-			<Nutrient/>
+		<div className='nutrients'>
+			<div className='header'>Nutritional Values</div>
+			<div className='composition'>
+				<Nutrient/>
+				<Nutrient/>
+				<Nutrient/>
+				<Nutrient/>
+			</div>
+			<div className='buttons'>
+				<button className='button'>Recipe</button>
+				<button className='button current'>Add to favorites</button>
+			</div>
 		</div>
 	);
 };
