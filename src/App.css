@@ -258,7 +258,7 @@
 }
 
 .nutrients .buttons {
-  margin-bottom: 31.64px;
+  padding-bottom: 31.64px;
   display: flex;
   gap: 24.06px;
 }
