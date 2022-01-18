@@ -2,7 +2,7 @@ import React from 'react';
 
 const Aside = () => {
 	return (
-		<div>
+		<div style={{display: 'none'}}>
 			Aside
 		</div>
 	);

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
 	return (
-		<div>
+		<div style={{display: 'none'}}>
 			Footer
 		</div>
 	);
