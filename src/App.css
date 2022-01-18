@@ -336,3 +336,21 @@
   width: 96.04px;
   height: 94.96px;
 }
+
+/* Recipes component styles */
+.recipes {
+  margin-left: 84.17px;
+  margin-top: 23.74px;
+  padding-bottom: 39.93px;
+}
+
+.recipes .header {
+  font-family: 'Arima Madurai', cursive;
+  font-size: 23.98px;
+  color: #404040;
+}
+
+.recipes > .content {
+  display: flex;
+  gap: 48.56px;
+}

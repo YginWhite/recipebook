@@ -3,12 +3,17 @@ import RecipeSmall from './RecipeSmall/RecipeSmall';
 
 const Recipes = () => {
 	return (
-		<div>
-			Recipes
-			<RecipeSmall/>
-			<RecipeSmall/>
-			<RecipeSmall/>
-			<RecipeSmall/>
+		<div className='recipes'>
+			<div className='header'>
+				More recipies
+			</div>
+			<div className='content'>
+				<RecipeSmall/>
+				<RecipeSmall/>
+				<RecipeSmall/>
+				<RecipeSmall/>
+				<RecipeSmall/>
+			</div>
 		</div>
 	);
 };
