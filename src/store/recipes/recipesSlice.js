@@ -99,12 +99,18 @@ export const loadRecipes = () => {};
 // 	}
 
 export const fetchRecipes = () =>
-	(dispatch, getState) => {
-		const recipes = api.getRecipes();
-		dispatch(recipesLoaded(recipes));
-		dispatch(currentRecipeIdIsSet(recipes[0].id));
+	async (dispatch, getState) => {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				const recipes = api.getRecipes();
+				dispatch(recipesLoaded(recipes));
+				dispatch(currentRecipeIdIsSet(recipes[0].id));
+				resolve();
+			}, 1000);
+		});
+		
 
-		const state = getState();
-		const data = selectRecipeSummary(state, 639752);
-		console.log(data);
+		// const state = getState();
+		// const data = selectRecipeSummary(state, 639752);
+		// console.log(data);
 	};
