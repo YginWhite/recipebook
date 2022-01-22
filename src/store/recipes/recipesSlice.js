@@ -73,6 +73,11 @@ export const selectRecipeNutritionValues = createSelector(
 		.filter(({ name }) => ['Calories', 'Fat', 'Carbohydrates', 'Protein'].includes(name))
 );
 
+export const selectRecipeSummary = createSelector(
+	selectRecipeById,
+	recipe => ({ title: recipe.title, summary: recipe.summary })
+);
+
 export const selectSummaries = createSelector(
 	selectRecipes,
 	recipes => recipes.map(({ title, summary, id }) => ({ title, summary, id }))
@@ -99,7 +104,7 @@ export const fetchRecipes = () =>
 		dispatch(recipesLoaded(recipes));
 		dispatch(currentRecipeIdIsSet(recipes[0].id));
 
-		// const state = getState();
-		// const data = selectRecipeIngredients(state, 639752);
-		// console.log(data);
+		const state = getState();
+		const data = selectRecipeSummary(state, 639752);
+		console.log(data);
 	};
