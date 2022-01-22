@@ -1,10 +1,10 @@
 import React from 'react';
 import dish from '../../../../assets/images/dish.png';
 
-const Image = () => {
+const Image = ({ src }) => {
 	return (
 		<div className='dish-image'>
-			<img src={dish} alt='dish'/>
+			<img src={src} alt='dish'/>
 		</div>
 	);
 };

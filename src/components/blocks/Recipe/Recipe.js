@@ -20,12 +20,11 @@ const Recipe = () => {
 	const summary = useSelector(state => selectRecipeSummary(state, id));
 	let ingredients = useSelector(state => selectRecipeIngredients(state, id));
 	let nutrients = useSelector(state => selectRecipeNutritionValues(state, id));
-	//const imageSrc = useSelector(state => selectRecipeImgSrc(state, id));
+	const imageSrc = useSelector(state => selectRecipeImgSrc(state, id));
 
 	summary.summary = utils.trimStringToLength(summary.summary, 289);
 	ingredients = prepareIngredients(ingredients);
 	nutrients = prepareNutrients(nutrients);
-	console.log(nutrients);
 
 	return (
 		<div className='recipe'>
@@ -33,7 +32,7 @@ const Recipe = () => {
 				<Summary { ...summary } />
 				<Ingredients ingredients={ingredients}/>
 				<Nutrients nutrients={nutrients}/>
-				<Image/>
+				<Image src={imageSrc}/>
 			</div>
 		</div>
 	);
