@@ -1,20 +1,25 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import HomePage from './views/HomePage/HomePage';
-import { fetchRecipes } from './store/recipes/recipesSlice';
+import { selectIsInitializedFlag, initializeApp } from './store/app/appSlice';
 import './App.css';
 
 function App() {
 	const dispatch = useDispatch();
+	const isInitialized = useSelector(selectIsInitializedFlag);
 
 	useEffect(() => {
-		dispatch(fetchRecipes('', 0));
+		dispatch(initializeApp());
 	}, []);
 
   return (
-    <>
-      <HomePage/>
-    </>
+    <div>
+      {isInitialized &&
+      	<div>
+      		<HomePage/>
+      	</div>
+      }
+    </div>
   );
 }
 
