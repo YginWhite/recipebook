@@ -1,15 +1,15 @@
 import React from 'react';
 import image from '../../../../../assets/images/chicken.png';
 
-const Ingredient = () => {
+const Ingredient = ({ name, original, imgSrc, imageName }) => {
 	return (
 		<div className='ingredient'>
 			<div className='image'>
-				<img src={image} alt='chiken'/>
+				<img src={imgSrc} alt={imageName}/>
 			</div>
 			<div className='description'>
-				<div>Chicken</div>
-				<div>1 Chicken Breast piece</div>
+				<div>{name}</div>
+				<div>{original}</div>
 			</div>
 		</div>
 	);

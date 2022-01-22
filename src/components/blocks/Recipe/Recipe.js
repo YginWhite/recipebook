@@ -12,26 +12,37 @@ import Ingredients from './Ingredients/Ingredients';
 import Nutrients from './Nutrients/Nutrients';
 import Image from './Image/Image';
 import { utils } from '../../../utils/utils';
+import { recipesAPI } from '../../../services/api';
+
 
 const Recipe = () => {
 	const id = useSelector(selectCurrentRecipeId);
 	const summary = useSelector(state => selectRecipeSummary(state, id));
-	//const ingredients = useSelector(state => selectRecipeIngredients(state, id));
+	let ingredients = useSelector(state => selectRecipeIngredients(state, id));
 	//const nutrients = useSelector(state => selectRecipeNutritionValues(state, id));
 	//const imageSrc = useSelector(state => selectRecipeImgSrc(state, id));
 
 	summary.summary = utils.trimStringToLength(summary.summary, 289);
+	ingredients = prepareIngredients(ingredients);
+
+	console.log(ingredients);
 
 	return (
 		<div className='recipe'>
 			<div>
 				<Summary { ...summary } />
-				<Ingredients/>
+				<Ingredients ingredients={ingredients}/>
 				<Nutrients/>
 				<Image/>
 			</div>
 		</div>
 	);
 };
+
+function prepareIngredients(ingredients) {
+	return ingredients
+		.map(item => ({ ...item, imgSrc: recipesAPI.createIngredientImageSrc(item.imageName) }))
+		.slice(0, 4);
+}
 
 export default Recipe;
