@@ -19,20 +19,20 @@ const Recipe = () => {
 	const id = useSelector(selectCurrentRecipeId);
 	const summary = useSelector(state => selectRecipeSummary(state, id));
 	let ingredients = useSelector(state => selectRecipeIngredients(state, id));
-	//const nutrients = useSelector(state => selectRecipeNutritionValues(state, id));
+	let nutrients = useSelector(state => selectRecipeNutritionValues(state, id));
 	//const imageSrc = useSelector(state => selectRecipeImgSrc(state, id));
 
 	summary.summary = utils.trimStringToLength(summary.summary, 289);
 	ingredients = prepareIngredients(ingredients);
-
-	console.log(ingredients);
+	nutrients = prepareNutrients(nutrients);
+	console.log(nutrients);
 
 	return (
 		<div className='recipe'>
 			<div>
 				<Summary { ...summary } />
 				<Ingredients ingredients={ingredients}/>
-				<Nutrients/>
+				<Nutrients nutrients={nutrients}/>
 				<Image/>
 			</div>
 		</div>
@@ -43,6 +43,18 @@ function prepareIngredients(ingredients) {
 	return ingredients
 		.map(item => ({ ...item, imgSrc: recipesAPI.createIngredientImageSrc(item.imageName) }))
 		.slice(0, 4);
+}
+
+function prepareNutrients(nutrients) {
+	return nutrients
+		.filter(({ name }) => ['Calories', 'Fat', 'Carbohydrates', 'Protein'].includes(name))
+		.map(nutrient => {
+			const item = { ...nutrient,  amount: Math.round(nutrient.amount) };
+			if (item.name === 'Carbohydrates') {
+				return { ...item, name: 'Carbs' }
+			}
+			return item;
+		});
 }
 
 export default Recipe;

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Nutrient = () => {
+const Nutrient = ({ name, amount, unit }) => {
 	return (
 		<div className='nutrient'>
-			<div className='value'>350</div>
-			<div className='name'>Calories</div>
-			<div className='unit'>Kcal</div>
+			<div className='value'>{amount}</div>
+			<div className='name'>{name}</div>
+			<div className='unit'>{unit}</div>
 		</div>
 	);
 };

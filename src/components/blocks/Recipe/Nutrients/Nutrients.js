@@ -1,15 +1,12 @@
 import React from 'react';
 import Nutrient from './Nutrient/Nutrient';
 
-const Nutrients = () => {
+const Nutrients = ({ nutrients }) => {
 	return (
 		<div className='nutrients'>
 			<div className='header'>Nutritional Values</div>
 			<div className='composition'>
-				<Nutrient/>
-				<Nutrient/>
-				<Nutrient/>
-				<Nutrient/>
+				{nutrients.map(nutrient => <Nutrient key={nutrient.name} { ...nutrient }/>)}
 			</div>
 			<div className='buttons'>
 				<button className='button'>Recipe</button>

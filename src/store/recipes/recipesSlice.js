@@ -70,7 +70,6 @@ export const selectRecipeNutritionValues = createSelector(
 	selectRecipeById,
 	recipe => recipe.nutrition.nutrients
 		.map(({ name, amount, unit }) => ({ name, amount, unit }))
-		.filter(({ name }) => ['Calories', 'Fat', 'Carbohydrates', 'Protein'].includes(name))
 );
 
 export const selectRecipeSummary = createSelector(
