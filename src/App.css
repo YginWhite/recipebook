@@ -309,7 +309,8 @@
 .recipe-small .content {
   box-sizing: border-box;
   width: 142.44px;
-  height: 130.57px;
+  /*height: 130.57px;*/
+  height: 160px;
   border: 0px solid #FFFFFF;
   border-width: 1.69px 1.97px;
   border-radius: 7.03px;
@@ -334,11 +335,19 @@
 .recipe-small .image {
   position: absolute;
   left: 22.66px;
-  bottom: 67.98px;
+  /*bottom: 67.98px;*/
+  bottom: 105px;
+
+  height: 94.96px;
+  width: 94.96px;
+  box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
+  border: 2px solid white;
+  border-radius: 50px;
+  overflow: hidden;
 }
 
 .recipe-small .image img {
-  width: 96.04px;
+  /*width: 96.04px;*/
   height: 94.96px;
 }
 
