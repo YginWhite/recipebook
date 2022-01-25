@@ -11,8 +11,6 @@
 }
 
 /* Logo component styles */
-@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@800&display=swap');
-
 .logo {
   padding: 19.19px 0 0 24.13px;
   font-family: 'Arima Madurai', cursive;
@@ -21,8 +19,6 @@
 }
 
 /* RecipeType component styles */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
 .recipe-type {
   width: 623.7px;
   margin: 17.81px 87.8px;
@@ -106,8 +102,6 @@
 }
 
 /* Summary component styles */
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 .summary {
   width: 451.05px;
   padding-top: 16.14px;
