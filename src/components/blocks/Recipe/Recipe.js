@@ -1,5 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import styled from 'styled-components';
+
 import { 
 	selectCurrentRecipeId,
 	selectRecipeSummary,
@@ -14,6 +16,20 @@ import Image from './Image/Image';
 import { utils } from '../../../utils/utils';
 import { recipesAPI } from '../../../services/api';
 
+const StyledRecipe = styled.div`
+	position: relative;
+  width: 623.7px;
+  margin-left: 26.98px;
+  border-radius: 19.42px;
+  background-color: white;
+  box-shadow: 0px 2.15814px 5.39535px rgba(0, 0, 0, 0.15);
+
+  & > div {
+  	margin: 6.89px 8.63px;
+  	border-radius: 19.42px;
+  	background-color: #F0F7FF;
+  }
+`;
 
 const Recipe = () => {
 	const id = useSelector(selectCurrentRecipeId);
@@ -27,14 +43,14 @@ const Recipe = () => {
 	nutrients = prepareNutrients(nutrients);
 
 	return (
-		<div className='recipe'>
+		<StyledRecipe>
 			<div>
 				<Summary { ...summary } />
 				<Ingredients ingredients={ingredients}/>
 				<Nutrients nutrients={nutrients}/>
 				<Image src={imageSrc}/>
 			</div>
-		</div>
+		</StyledRecipe>
 	);
 };
 
