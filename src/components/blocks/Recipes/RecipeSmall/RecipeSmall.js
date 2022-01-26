@@ -8,7 +8,7 @@ const StyledRecipeSmall = styled.div`
   padding-top: 32.37px;
 `;
 
-const Image = styled.div`
+const Image = styled.figure`
 	position: absolute;
   left: 22.66px;
   bottom: 105px;
@@ -58,7 +58,7 @@ const RecipeSmall = ({ title, id, imageSrc, readyInMinutes, onClick }) => {
 				<img src={imageSrc} alt='small dish'/>
 			</Image>
 			<Content>
-				<div>{title}</div>
+				<header><h4>{title}</h4></header>
 				<div>{readyInMinutes} min cooktime</div>
 			</Content>
 		</StyledRecipeSmall>

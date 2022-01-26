@@ -3,9 +3,11 @@ import Logo from '../../blocks/Logo/Logo';
 
 const Header = () => {
 	return (
-		<div>
-			<Logo/>
-		</div>
+		<section>
+			<header>
+				<Logo/>
+			</header>
+		</section>
 	);
 };
 

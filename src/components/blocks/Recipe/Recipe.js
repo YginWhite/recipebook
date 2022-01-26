@@ -16,7 +16,7 @@ import Image from './Image/Image';
 import { utils } from '../../../utils/utils';
 import { recipesAPI } from '../../../services/api';
 
-const StyledRecipe = styled.div`
+const StyledRecipe = styled.article`
 	position: relative;
   width: 623.7px;
   margin-left: 26.98px;

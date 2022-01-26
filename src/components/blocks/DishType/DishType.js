@@ -46,7 +46,7 @@ const DishType = () => {
 				if (dishTypes.includes(type.toLowerCase())) {
 					selected = true;
 				}
-				return <Item key={type} selected={selected}>{type}</Item>;
+				return <Item key={type} selected={selected}><h2>{type}</h2></Item>;
 			})}
 		</StyledDishType>
 	);

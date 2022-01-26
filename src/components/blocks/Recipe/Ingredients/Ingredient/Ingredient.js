@@ -8,7 +8,7 @@ const StyledIngredient = styled.div`
   display: flex;
 `;
 
-const Image = styled.div`
+const Image = styled.figure`
 	padding: 6.16px 11.59px 7.03px 11.38px;
   box-sizing: border-box;
   border-top: 0.51px solid white;
@@ -50,7 +50,7 @@ const Ingredient = ({ name, original, imgSrc, imageName }) => {
 				<img src={imgSrc} alt={imageName}/>
 			</Image>
 			<Description>
-				<div>{name}</div>
+				<header><h5>{name}</h5></header>
 				<div>{original}</div>
 			</Description>
 		</StyledIngredient>

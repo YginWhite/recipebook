@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 import Ingredient from './Ingredient/Ingredient';
 
-const StyledIngredients = styled.div`
+const StyledIngredients = styled.section`
 	margin-left: 11.42px;
   margin-top: 18.34px;
 `;
 
-const Header = styled.div`
+const Header = styled.header`
 	font-family: 'Arima Madurai', cursive;
   font-size: 19.42px;
   color: #969696;
@@ -41,7 +41,7 @@ const Buttons = styled.div`
 const Ingredients = ({ ingredients }) => {
 	return (
 		<StyledIngredients>
-			<Header>Ingredients</Header>
+			<Header><h4>Ingredients</h4></Header>
 			<Item>
 				{ingredients.map(ingredient => <Ingredient key={ingredient.name} { ...ingredient }/>)}
 			</Item>

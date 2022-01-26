@@ -2,9 +2,11 @@ import React from 'react';
 
 const Footer = () => {
 	return (
-		<div style={{display: 'none'}}>
-			Footer
-		</div>
+		<section style={{display: 'none'}}>
+			<footer>
+				Footer
+			</footer>
+		</section>
 	);
 };
 

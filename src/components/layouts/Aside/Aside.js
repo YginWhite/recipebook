@@ -2,9 +2,11 @@ import React from 'react';
 
 const Aside = () => {
 	return (
-		<div style={{display: 'none'}}>
-			Aside
-		</div>
+		<section style={{display: 'none'}}>
+			<aside>
+				Aside
+			</aside>
+		</section>
 	);
 };
 

@@ -13,13 +13,13 @@ function App() {
 	}, []);
 
   return (
-    <div>
+    <>
       {isInitialized &&
-      	<div>
+      	<>
       		<HomePage/>
-      	</div>
+      	</>
       }
-    </div>
+    </>
   );
 }
 

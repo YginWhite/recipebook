@@ -6,7 +6,7 @@ import DishType from '../../blocks/DishType/DishType';
 import Recipe from '../../blocks/Recipe/Recipe';
 import Recipes from '../../blocks/Recipes/Recipes';
 
-const StyledMain = styled.div``;
+const StyledMain = styled.section``;
 
 const Body = styled.div`
 	display: flex;
@@ -15,13 +15,17 @@ const Body = styled.div`
 const Main = () => {
 	return (
 		<StyledMain>
-			<div>
-				<RecipeType/>
-			</div>
+			<header>
+				<nav>
+					<RecipeType/>
+				</nav>
+			</header>
+
 			<Body>
 				<DishType/>
 				<Recipe/>
 			</Body>
+			
 			<Recipes/>
 		</StyledMain>
 	);

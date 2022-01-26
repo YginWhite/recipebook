@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import dish from '../../../../assets/images/dish.png';
 
-const StyledImage = styled.div`
+const StyledImage = styled.section`
 	position: absolute;
   left: 395.05px;
   top: 38.85px;
@@ -22,7 +22,9 @@ const StyledImage = styled.div`
 const Image = ({ src }) => {
 	return (
 		<StyledImage>
-			<img src={src} alt='dish'/>
+      <figure>
+        <img src={src} alt='dish'/>
+      </figure>
 		</StyledImage>
 	);
 };

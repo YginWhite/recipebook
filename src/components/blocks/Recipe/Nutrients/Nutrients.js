@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 import Nutrient from './Nutrient/Nutrient';
 
-const StyledNutrients = styled.div`
+const StyledNutrients = styled.section`
 	margin-left: 11.42px;
   margin-top: 24.43px;
 `;
 
-const Header = styled.div`
+const Header = styled.header`
 	font-family: 'Arima Madurai', cursive;
   font-size: 19.42px;
   line-height: 1;
@@ -49,7 +49,7 @@ const AddButton = styled(Button)`
 const Nutrients = ({ nutrients }) => {
 	return (
 		<StyledNutrients>
-			<Header>Nutritional Values</Header>
+			<Header><h4>Nutritional Values</h4></Header>
 			<Composition>
 				{nutrients.map(nutrient => <Nutrient key={nutrient.name} { ...nutrient }/>)}
 			</Composition>

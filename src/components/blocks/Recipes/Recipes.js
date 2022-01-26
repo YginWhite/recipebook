@@ -5,13 +5,13 @@ import styled from 'styled-components';
 import RecipeSmall from './RecipeSmall/RecipeSmall';
 import { selectShortRecipesInfo, currentRecipeIdIsSet } from '../../../store/recipes/recipesSlice';
 
-const StyledRecipes = styled.div`
+const StyledRecipes = styled.section`
 	margin-left: 84.17px;
   margin-top: 23.74px;
   padding-bottom: 39.93px;
 `;
 
-const Header = styled.div`
+const Header = styled.header`
 	font-family: 'Arima Madurai', cursive;
   font-size: 23.98px;
   color: #404040;
@@ -30,7 +30,7 @@ const Recipes = () => {
 
 	return (
 		<StyledRecipes>
-			<Header>More recipies</Header>
+			<Header><h3>More recipies</h3></Header>
 			<Items>
 				{recipesInfo.map(item => <RecipeSmall key={item.id} { ...item } onClick={onRecipeClicked}/>)}
 			</Items>
