@@ -4,17 +4,22 @@ import styled from 'styled-components';
 import Ingredient from './Ingredient/Ingredient';
 
 const StyledIngredients = styled.section`
-	margin-left: 11.42px;
-  margin-top: 18.34px;
+
 `;
 
 const Header = styled.header`
-	font-family: 'Arima Madurai', cursive;
-  font-size: 19.42px;
-  color: #969696;
+  h4 {
+  	margin: 0;
+  	font-family: 'Arima Madurai', cursive;
+  	font-style: normal;
+		font-weight: 800;
+		font-size: 19.4233px;
+		line-height: 32px;
+		color: #969696;
+  }
 `;
 
-const Item = styled.div`
+const Items = styled.div`
 	width: 291.55px;
   display: flex;
   align-content: space-between;
@@ -40,11 +45,11 @@ const Buttons = styled.div`
 
 const Ingredients = ({ ingredients }) => {
 	return (
-		<StyledIngredients>
+		<StyledIngredients className='recipe-ingredients'>
 			<Header><h4>Ingredients</h4></Header>
-			<Item>
+			<Items>
 				{ingredients.map(ingredient => <Ingredient key={ingredient.name} { ...ingredient }/>)}
-			</Item>
+			</Items>
 			<Buttons>
 				<button>View all ingredients</button>
 			</Buttons>
