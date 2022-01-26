@@ -4,25 +4,28 @@ import styled from 'styled-components';
 import Nutrient from './Nutrient/Nutrient';
 
 const StyledNutrients = styled.section`
-	margin-left: 11.42px;
-  margin-top: 24.43px;
+	
 `;
 
 const Header = styled.header`
-	font-family: 'Arima Madurai', cursive;
-  font-size: 19.42px;
-  line-height: 1;
-  color: #969696;
+  h4 {
+    margin: 0;
+    font-family: 'Arima Madurai', cursive;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 19.4233px;
+    line-height: 32px;
+    color: #969696;
+  }
 `;
 
 const Composition = styled.div`
-	margin: 16.19px 0 15.11px 0;
+	margin: 11.19px 0 15.11px 0;
   display: flex;
   gap: 15.11px;
 `;
 
 const Buttons = styled.div`
-	padding-bottom: 31.64px;
   display: flex;
   gap: 24.06px;
 `;
@@ -48,7 +51,7 @@ const AddButton = styled(Button)`
 
 const Nutrients = ({ nutrients }) => {
 	return (
-		<StyledNutrients>
+		<StyledNutrients className='recipe-nutrients'>
 			<Header><h4>Nutritional Values</h4></Header>
 			<Composition>
 				{nutrients.map(nutrient => <Nutrient key={nutrient.name} { ...nutrient }/>)}
