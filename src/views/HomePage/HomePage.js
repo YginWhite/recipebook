@@ -7,26 +7,20 @@ import Aside from '../../components/layouts/Aside/Aside';
 import Footer from '../../components/layouts/Footer/Footer';
 
 const StyledHomePage = styled.div`
-	padding: 7px 5px;
-  box-sizing: border-box;
+  border-style: solid;
+  border-width: 6.71px 4.32px;
+  border-color: #FFFFFF;
   border-radius: 20px;
-  background-color: #FFFFFF;
-
-  & > div {
-  	border-radius: 20px;
-  	background-color: #F0F7FF;
-  }
+  background-color: #F0F7FF;
 `;
 
 const HomePage = () => {
 	return (
 		<StyledHomePage>
-			<div>
-				<Header/>
-      	<Main/>
-      	<Aside/>
-      	<Footer/>
-			</div>
+			<Header/>
+    	<Main/>
+    	<Aside/>
+    	<Footer/>
 		</StyledHomePage>
 	);
 };
