@@ -6,20 +6,29 @@ import DishType from '../../blocks/DishType/DishType';
 import Recipe from '../../blocks/Recipe/Recipe';
 import Recipes from '../../blocks/Recipes/Recipes';
 
-const StyledMain = styled.section``;
+const StyledMain = styled.section`
+	padding-top: 17.81px;
+`;
+
+const Header = styled.header`
+	padding-left: 59.35px;
+`;
 
 const Body = styled.div`
 	display: flex;
+	align-items: center;
+	padding-top: 19.97px;
+	padding-left: 5.4px;
 `;
 
 const Main = () => {
 	return (
 		<StyledMain>
-			<header>
+			<Header>
 				<nav>
 					<RecipeType/>
 				</nav>
-			</header>
+			</Header>
 
 			<Body>
 				<DishType/>
