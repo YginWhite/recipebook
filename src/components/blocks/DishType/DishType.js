@@ -9,25 +9,33 @@ const StyledDishType = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   height: 357.17px;
-  width: 35.6px;
-  margin-left: 25.21px;
   padding: 0;
+  margin: 0;
+  margin-left: -23px;
   list-style: none;
 `;
 
 const Item = styled.li`
-	writing-mode: vertical-lr;
-  transform: scale(-1, -1);
-  font-family: 'Roboto', sans-serif;
-  font-size: 17.53px;
-  color: ${props => props.selected ? '#404040' : '#969696'};
+  transform: rotate(-90deg);
 
-  &:before {
+  h2 {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17.5254px;
+    line-height: 21px;
+    text-align: center;
+    color: ${props => props.selected ? '#404040' : '#969696'};
+  }
+
+  &:after {
   	content: '';
   	display: block;
   	width: 9.71px;
   	height: 9.71px;
-  	margin: auto 10px auto 0;
+  	margin: 4.47px auto 0 auto;
   	border-radius: 9.71px;
   	background-color: ${props => props.selected ? '#408EBA' : 'transparent'};
   }
