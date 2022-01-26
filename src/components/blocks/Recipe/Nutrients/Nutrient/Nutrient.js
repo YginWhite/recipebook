@@ -23,10 +23,13 @@ const Value = styled.div`
 `;
 
 const Name = styled.header`
-	font-family: 'Roboto', sans-serif;
-  font-size: 12.97px;
-  font-weight: 500;
-  color: #000000;
+  h5 {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12.97px;
+    font-weight: 500;
+    color: #000000;
+  }
 `;
 
 const Unit = styled.div`
