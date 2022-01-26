@@ -5,16 +5,18 @@ import image from '../../../../../assets/images/chicken.png';
 
 const StyledIngredient = styled.div`
 	width: 139.8px;
+	height: 39.57px;
   display: flex;
 `;
 
 const Image = styled.figure`
-	padding: 6.16px 11.59px 7.03px 11.38px;
-  box-sizing: border-box;
-  border-top: 0.51px solid white;
-  border-bottom: 0.51px solid white;
-  border-left: 0.68px solid white;
-  border-right: 0.68px solid white;
+	box-sizing: border-box;
+	width: 49.39px;
+	margin: 0; 
+	padding: 5.65px 10.91px 6.35px 10.87px;
+	border-style: solid;
+  border-width: 0.51px 0.68px;
+  border-color: #FFFFFF;
   border-radius: 7.03px;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
 
@@ -25,21 +27,27 @@ const Image = styled.figure`
 `;
 
 const Description = styled.div`
-	margin: 6.5px 0 0 6px;
+	padding-left: 6px;
+	padding-top: 6px;
 
-	& div:first-child {
-		padding-top: 3px;
+	h5 {
+		margin: 0;
   	font-family: 'Roboto', sans-serif;
-  	font-size: 10.55px;
-  	font-weight: 500;
-  	color: #404040;
+  	font-style: normal;
+		font-weight: 500;
+		font-size: 10.5509px;
+		line-height: 12px;
+		color: #404040;
 	}
 
 	& div:last-child {
-		padding-top: 4px;
+		margin-top: 5px;
   	font-family: 'Roboto', sans-serif;
-  	font-size: 8.12px;
-  	color: #969696;
+  	font-style: normal;
+		font-weight: 500;
+		font-size: 8.1242px;
+		line-height: 10px;
+		color: #969696;
 	}
 `;
 
