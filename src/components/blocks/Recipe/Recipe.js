@@ -17,17 +17,23 @@ import { utils } from '../../../utils/utils';
 import { recipesAPI } from '../../../services/api';
 
 const StyledRecipe = styled.article`
+	box-sizing: border-box;
 	position: relative;
   width: 623.7px;
-  margin-left: 26.98px;
+  margin-left: 0;
+  padding: 16.14px 11.42px 31.95px 11.42px;
+  border-style: solid;
+  border-width: 6.89px 8.63px;
+  border-color: #FFFFFF;
   border-radius: 19.42px;
-  background-color: white;
   box-shadow: 0px 2.15814px 5.39535px rgba(0, 0, 0, 0.15);
 
-  & > div {
-  	margin: 6.89px 8.63px;
-  	border-radius: 19.42px;
-  	background-color: #F0F7FF;
+  section.recipe-ingredients {
+  	margin-top: 18.34px;
+  }
+
+  section.recipe-nutrients {
+  	margin-top: 16.68px;
   }
 `;
 
@@ -44,12 +50,10 @@ const Recipe = () => {
 
 	return (
 		<StyledRecipe>
-			<div>
-				<Summary { ...summary } />
-				<Ingredients ingredients={ingredients}/>
-				<Nutrients nutrients={nutrients}/>
-				<Image src={imageSrc}/>
-			</div>
+			<Summary { ...summary } />
+			<Ingredients ingredients={ingredients}/>
+			<Nutrients nutrients={nutrients}/>
+			<Image src={imageSrc}/>
 		</StyledRecipe>
 	);
 };
