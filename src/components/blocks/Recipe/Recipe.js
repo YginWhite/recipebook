@@ -40,14 +40,15 @@ const Recipe = () => {
 
 	const summary = useSelector(state => selectRecipeSummary(state, 289));
 	const ingredients = useSelector(state => selectRecipeIngredients(state, 4));
+	const nutrients = useSelector(
+		state => selectRecipeNutritionValues(state, ['Calories', 'Fat', 'Carbohydrates', 'Protein'])
+	);
 
-	let nutrients = useSelector(state => selectRecipeNutritionValues(state, id));
 	const imageSrc = useSelector(state => selectRecipeImgSrc(state, id));
 
 	
 	
-	nutrients = prepareNutrients(nutrients);
-
+	
 	return (
 		<StyledRecipe>
 			<Summary { ...summary } />

@@ -79,14 +79,34 @@ export const selectRecipeIngredients = createSelector(
 	}
 );
 
+export const selectRecipeNutritionValues = createSelector(
+	selectCurrentRecipe,
+	(state, nutrientNames) => nutrientNames,
+	(recipe, nutrientNames) => {
+		let nutrients = recipe.nutrition.nutrients.map(
+			({ name, amount, unit }) => ({ name, amount, unit })
+		);
+
+		if (nutrientNames) {
+			nutrients = nutrients.filter(({ name }) => nutrientNames.includes(name));
+		}
+
+		return nutrients.map(nutrient => {
+			const item = { ...nutrient,  amount: Math.round(nutrient.amount) };
+			if (item.name === 'Carbohydrates') {
+				return { ...item, name: 'Carbs' }
+			}
+			return item;
+		});
+	}
+);
 
 
-// export const selectRecipeIngredients = createSelector(
-// 	selectRecipeById,
-// 	recipe => recipe.extendedIngredients.map(
-// 		({ name, image, original }) => ({ name, imageName: image, original })
-// 	)
-// );
+
+
+
+
+
 
 
 
@@ -106,12 +126,6 @@ export const selectRecipeById = createSelector(
 export const selectRecipeImgSrc = createSelector(
 	selectRecipeById,
 	recipe => recipe.image
-);
-
-export const selectRecipeNutritionValues = createSelector(
-	selectRecipeById,
-	recipe => recipe.nutrition.nutrients
-		.map(({ name, amount, unit }) => ({ name, amount, unit }))
 );
 
 export const selectSummaries = createSelector(
