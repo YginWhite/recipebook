@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
 import { api, recipesAPI } from '../../services/api';
 
-const RECIPES_REQUESTED = 'recipes/recipesRequested';
-const RECIPES_RECEIVED = 'recipes/recipesReceived';
+//const RECIPES_REQUESTED = 'recipes/recipesRequested';
+//const RECIPES_RECEIVED = 'recipes/recipesReceived';
 const RECIPES_LOADED = 'recipes/recipesLoaded';
 const RECIPES_CURRENT_RECIPE_ID_IS_SET = 'recipes/currentRecipeIdIsSet';
 
@@ -26,15 +26,39 @@ export default function recipesReducer(state = initialState, action) {
 }
 
 
-export const recipesRequested = () => ({ type: RECIPES_REQUESTED });
-export const recipesReceived = () => ({ type: RECIPES_RECEIVED });
+//export const recipesRequested = () => ({ type: RECIPES_REQUESTED });
+//export const recipesReceived = () => ({ type: RECIPES_RECEIVED });
 export const recipesLoaded = (recipes) => ({ type: RECIPES_LOADED, payload: recipes });
 export const currentRecipeIdIsSet = (id) => ({ type: RECIPES_CURRENT_RECIPE_ID_IS_SET, payload: id });
 
 
-export const selectCurrentRecipeId = state => state.recipes.currentRecipeId;
-export const selectLoadingFlag = state => state.recipes.isLoading;
+
+//export const selectLoadingFlag = state => state.recipes.isLoading;
+
+
+
+
 export const selectRecipes = state => state.recipes.data;
+export const selectCurrentRecipeId = state => state.recipes.currentRecipeId;
+export const selectCurrentRecipe = createSelector(
+	selectRecipes,
+	selectCurrentRecipeId,
+	(recipes, currentRecipeId) => recipes.filter(recipe => recipe.id === currentRecipeId)[0]
+);
+
+export const selectRecipeDishTypes = createSelector(
+	selectCurrentRecipe,
+	recipe => recipe.dishTypes
+);
+
+
+
+
+
+
+
+
+
 
 export const selectRecipeIds = createSelector(
 	selectRecipes,
@@ -50,13 +74,6 @@ export const selectRecipeById = createSelector(
 export const selectRecipeImgSrc = createSelector(
 	selectRecipeById,
 	recipe => recipe.image
-);
-
-export const selectRecipeDishTypes = createSelector(
-	selectRecipeById,
-	recipe => recipe.dishTypes.filter(
-		type => ['dinner', 'lunch', 'breakfast'].includes(type)
-	)
 );
 
 export const selectRecipeIngredients = createSelector(
@@ -105,11 +122,10 @@ export const fetchRecipes = () =>
 				dispatch(recipesLoaded(recipes));
 				dispatch(currentRecipeIdIsSet(recipes[0].id));
 				resolve();
+
+				// const state = getState();
+				// const data = selectRecipeDishTypes(state, 639752);
+				// console.log(data);
 			}, 1000);
 		});
-		
-
-		// const state = getState();
-		// const data = selectRecipeSummary(state, 639752);
-		// console.log(data);
 	};

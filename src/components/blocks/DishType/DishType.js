@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
-import { selectRecipeDishTypes, selectCurrentRecipeId } from '../../../store/recipes/recipesSlice';
+import { selectRecipeDishTypes } from '../../../store/recipes/recipesSlice';
 
 const StyledDishType = styled.ul`
 	display: flex;
@@ -44,8 +44,7 @@ const Item = styled.li`
 const DishType = () => {
 	const types = ['Breakfast', 'Lunch', 'Dinner'];
 
-	const id = useSelector(selectCurrentRecipeId);
-	const dishTypes = useSelector(state => selectRecipeDishTypes(state, id));
+	const dishTypes = useSelector(selectRecipeDishTypes);
 
 	return (
 		<StyledDishType>
