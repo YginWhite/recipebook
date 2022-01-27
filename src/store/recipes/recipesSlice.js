@@ -33,12 +33,7 @@ export const recipesLoaded = (recipes) => ({ type: RECIPES_LOADED, payload: reci
 export const currentRecipeIdIsSet = (id) => ({ type: RECIPES_CURRENT_RECIPE_ID_IS_SET, payload: id });
 
 
-
 //export const selectLoadingFlag = state => state.recipes.isLoading;
-
-
-
-
 export const selectRecipes = state => state.recipes.data;
 export const selectCurrentRecipeId = state => state.recipes.currentRecipeId;
 
@@ -106,38 +101,29 @@ export const selectRecipeImgSrc = createSelector(
 	recipe => recipe.image
 );
 
-
-
-
-
-
-
-
-
-
-export const selectRecipeIds = createSelector(
+export const selectShortRecipesDescription = createSelector(
 	selectRecipes,
-	recipes => recipes.map(({ id }) => id)
+	(state, amount) => amount,
+	(recipes, amount) => {
+		const descriptions = recipes.map(
+			({ title, id, image, readyInMinutes  }) => ({ title, id, imageSrc: image, readyInMinutes })
+		);
+		if (amount) return descriptions.slice(0, amount);
+		return descriptions;
+	}
 );
 
-export const selectRecipeById = createSelector(
-	selectRecipes,
-	(state, recipeId) => recipeId,
-	(recipes, recipeId) => recipes.filter(({ id }) => recipeId === id)[0],
-);
+// export const selectRecipeIds = createSelector(
+// 	selectRecipes,
+// 	recipes => recipes.map(({ id }) => id)
+// );
 
+// export const selectRecipeById = createSelector(
+// 	selectRecipes,
+// 	(state, recipeId) => recipeId,
+// 	(recipes, recipeId) => recipes.filter(({ id }) => recipeId === id)[0],
+// );
 
-export const selectSummaries = createSelector(
-	selectRecipes,
-	recipes => recipes.map(({ title, summary, id }) => ({ title, summary, id }))
-);
-
-export const selectShortRecipesInfo = createSelector(
-	selectRecipes,
-	recipes => recipes.map(
-		({ title, id, image, readyInMinutes  }) => ({ title, id, imageSrc: image, readyInMinutes })
-	)
-);
 
 export const loadRecipes = () => {};
 

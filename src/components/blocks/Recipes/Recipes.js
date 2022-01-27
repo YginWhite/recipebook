@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 import RecipeSmall from './RecipeSmall/RecipeSmall';
-import { selectShortRecipesInfo, currentRecipeIdIsSet } from '../../../store/recipes/recipesSlice';
+import { selectShortRecipesDescription, currentRecipeIdIsSet } from '../../../store/recipes/recipesSlice';
 
 const StyledRecipes = styled.section`
 	
@@ -28,7 +28,7 @@ const Items = styled.div`
 
 const Recipes = () => {
 	const dispatch = useDispatch();
-	const recipesInfo = useSelector(selectShortRecipesInfo).slice(0, 5);
+	const recipesInfo = useSelector(state => selectShortRecipesDescription(state, 5));
 
 	const onRecipeClicked = (id) => dispatch(currentRecipeIdIsSet(id)); 
 
