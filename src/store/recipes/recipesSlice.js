@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import { api, recipesAPI } from '../../services/api';
+import { utils } from '../../utils/utils';
 
 //const RECIPES_REQUESTED = 'recipes/recipesRequested';
 //const RECIPES_RECEIVED = 'recipes/recipesReceived';
@@ -40,6 +41,7 @@ export const currentRecipeIdIsSet = (id) => ({ type: RECIPES_CURRENT_RECIPE_ID_I
 
 export const selectRecipes = state => state.recipes.data;
 export const selectCurrentRecipeId = state => state.recipes.currentRecipeId;
+
 export const selectCurrentRecipe = createSelector(
 	selectRecipes,
 	selectCurrentRecipeId,
@@ -51,8 +53,17 @@ export const selectRecipeDishTypes = createSelector(
 	recipe => recipe.dishTypes
 );
 
-
-
+export const selectRecipeSummary = createSelector(
+	selectCurrentRecipe,
+	(state, summaryLength) => summaryLength,
+	(recipe, summaryLength) => {
+		const data = { title: recipe.title, summary: recipe.summary };
+		if (summaryLength) {
+			return { ...data, summary: utils.trimStringToLength(data.summary, summaryLength) };
+		}
+		return data;
+	}
+);
 
 
 
@@ -87,11 +98,6 @@ export const selectRecipeNutritionValues = createSelector(
 	selectRecipeById,
 	recipe => recipe.nutrition.nutrients
 		.map(({ name, amount, unit }) => ({ name, amount, unit }))
-);
-
-export const selectRecipeSummary = createSelector(
-	selectRecipeById,
-	recipe => ({ title: recipe.title, summary: recipe.summary })
 );
 
 export const selectSummaries = createSelector(

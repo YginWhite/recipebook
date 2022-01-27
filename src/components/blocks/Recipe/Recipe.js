@@ -13,7 +13,6 @@ import Summary from './Summary/Summary';
 import Ingredients from './Ingredients/Ingredients';
 import Nutrients from './Nutrients/Nutrients';
 import Image from './Image/Image';
-import { utils } from '../../../utils/utils';
 import { recipesAPI } from '../../../services/api';
 
 const StyledRecipe = styled.article`
@@ -39,12 +38,14 @@ const StyledRecipe = styled.article`
 
 const Recipe = () => {
 	const id = useSelector(selectCurrentRecipeId);
-	const summary = useSelector(state => selectRecipeSummary(state, id));
+	const summary = useSelector(state => selectRecipeSummary(state, 289));
+
+
 	let ingredients = useSelector(state => selectRecipeIngredients(state, id));
 	let nutrients = useSelector(state => selectRecipeNutritionValues(state, id));
 	const imageSrc = useSelector(state => selectRecipeImgSrc(state, id));
 
-	summary.summary = utils.trimStringToLength(summary.summary, 289);
+	
 	ingredients = prepareIngredients(ingredients);
 	nutrients = prepareNutrients(nutrients);
 
