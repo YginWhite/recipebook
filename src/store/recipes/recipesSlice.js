@@ -65,7 +65,28 @@ export const selectRecipeSummary = createSelector(
 	}
 );
 
+export const selectRecipeIngredients = createSelector(
+	selectCurrentRecipe,
+	(state, amount) => amount,
+	(recipe, amount) => {
+		let ingredients = recipe.extendedIngredients.map(
+			({ name, image, original }) => ({ name, imageName: image, original })
+		);
+		if (amount) ingredients = ingredients.slice(0, amount);
+		return ingredients.map(
+			item => ({ ...item, imgSrc: recipesAPI.createIngredientImageSrc(item.imageName) })
+		);
+	}
+);
 
+
+
+// export const selectRecipeIngredients = createSelector(
+// 	selectRecipeById,
+// 	recipe => recipe.extendedIngredients.map(
+// 		({ name, image, original }) => ({ name, imageName: image, original })
+// 	)
+// );
 
 
 
@@ -85,13 +106,6 @@ export const selectRecipeById = createSelector(
 export const selectRecipeImgSrc = createSelector(
 	selectRecipeById,
 	recipe => recipe.image
-);
-
-export const selectRecipeIngredients = createSelector(
-	selectRecipeById,
-	recipe => recipe.extendedIngredients.map(
-		({ name, image, original }) => ({ name, imageName: image, original })
-	)
 );
 
 export const selectRecipeNutritionValues = createSelector(

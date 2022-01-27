@@ -13,7 +13,6 @@ import Summary from './Summary/Summary';
 import Ingredients from './Ingredients/Ingredients';
 import Nutrients from './Nutrients/Nutrients';
 import Image from './Image/Image';
-import { recipesAPI } from '../../../services/api';
 
 const StyledRecipe = styled.article`
 	box-sizing: border-box;
@@ -38,15 +37,15 @@ const StyledRecipe = styled.article`
 
 const Recipe = () => {
 	const id = useSelector(selectCurrentRecipeId);
+
 	const summary = useSelector(state => selectRecipeSummary(state, 289));
+	const ingredients = useSelector(state => selectRecipeIngredients(state, 4));
 
-
-	let ingredients = useSelector(state => selectRecipeIngredients(state, id));
 	let nutrients = useSelector(state => selectRecipeNutritionValues(state, id));
 	const imageSrc = useSelector(state => selectRecipeImgSrc(state, id));
 
 	
-	ingredients = prepareIngredients(ingredients);
+	
 	nutrients = prepareNutrients(nutrients);
 
 	return (
@@ -59,11 +58,7 @@ const Recipe = () => {
 	);
 };
 
-function prepareIngredients(ingredients) {
-	return ingredients
-		.map(item => ({ ...item, imgSrc: recipesAPI.createIngredientImageSrc(item.imageName) }))
-		.slice(0, 4);
-}
+
 
 function prepareNutrients(nutrients) {
 	return nutrients
