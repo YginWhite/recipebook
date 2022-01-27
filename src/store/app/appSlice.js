@@ -1,4 +1,4 @@
-import { fetchRecipes } from '../recipes/recipesSlice';
+import { loadRecipes } from '../recipes/recipesSlice';
 
 const APP_INITIALIZED = 'app/appInitialized';
 
@@ -19,7 +19,7 @@ export const appInitialized = () => ({ type: APP_INITIALIZED });
 
 export const initializeApp = () =>
 	async (dispatch, getState) => {
-		const promise = dispatch(fetchRecipes());
+		const promise = dispatch(loadRecipes());
 		await Promise.all([ promise ]);
 		dispatch(appInitialized());
 	};

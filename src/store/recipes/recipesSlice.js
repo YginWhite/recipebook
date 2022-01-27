@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
 import { api, recipesAPI } from '../../services/api';
 import { utils } from '../../utils/utils';
+import { storage } from '../../services/storage';
 
 //const RECIPES_REQUESTED = 'recipes/recipesRequested';
 //const RECIPES_RECEIVED = 'recipes/recipesReceived';
@@ -125,7 +126,17 @@ export const selectShortRecipesDescription = createSelector(
 // );
 
 
-export const loadRecipes = () => {};
+export const loadRecipes = () => 
+	async (dispatch, getState) => {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				const recipes = storage.getRecipes() || api.getRecipes();
+				dispatch(recipesLoaded(recipes));
+				dispatch(currentRecipeIdIsSet(recipes[0].id));
+				resolve();
+			}, 0);
+		});
+	};
 
 // export const fetchRecipes = (query, offset) =>
 // 	async (dispatch, getState) => {
@@ -140,6 +151,9 @@ export const fetchRecipes = () =>
 				const recipes = api.getRecipes();
 				dispatch(recipesLoaded(recipes));
 				dispatch(currentRecipeIdIsSet(recipes[0].id));
+
+				//storage.setRecipes(recipes);
+
 				resolve();
 
 				// const state = getState();
