@@ -5,17 +5,23 @@ import dish from '../../../../assets/images/dish.png';
 
 const StyledImage = styled.section`
 	position: absolute;
-  left: 395.05px;
-  top: 38.85px;
-  height: 454.29px;
-  width: 454.29px;
+  right: -212px;
+  top: 45px;
   border-radius: 229px;
   border: 5px solid white;
   overflow: hidden;
-  box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 7px 40px -12px rgba(0,0,0,0.3);
+
+  figure {
+    margin: 0;
+    height: 420px;
+    width: 420px;
+  }
 
   img {
-  	height: 454.29px;
+    display: block;
+  	height: 420px;
+    margin-left: -105px;
   }
 `;
 
