@@ -5,15 +5,21 @@ import smallDish from '../../../../assets/images/small-dish.png';
 
 const StyledRecipeSmall = styled.div`
 	position: relative;
-  padding-top: 32.37px;
+  width: 142.44px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 const Image = styled.figure`
+  box-sizing: border-box;
 	position: absolute;
+  top: 0;
   left: 22.66px;
-  bottom: 105px;
+  margin: 0;
+  width: 94.04px;
   height: 94.96px;
-  width: 94.96px;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
   border: 2px solid white;
   border-radius: 50px;
@@ -25,27 +31,49 @@ const Image = styled.figure`
 `;
 
 const Content = styled.div`
-	box-sizing: border-box;
-  width: 142.44px;
+  box-sizing: border-box;
   height: 160px;
   border: 0px solid #FFFFFF;
   border-width: 1.69px 1.97px;
   border-radius: 7.03px;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
 
-  & div:first-child {
-  	margin-top: 69.06px;
-  	font-family: 'Roboto', sans-serif;
-  	font-size: 15.11px;
-  	text-align: center;
+  h4 {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15.107px;
+    line-height: 18px;
+    color: #000000;
+    text-align: center;
   }
 
-  & div:last-child {
-  	margin-top: 9.71px;
+  div {
+    height: 90px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    header {
+      height: 56px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 19px;
   	font-family: 'Roboto', sans-serif;
-  	font-size: 12.95px;
-  	text-align: center;
-  	color: #969696;
+  	font-style: normal;
+    font-weight: 400;
+    font-size: 12.9488px;
+    line-height: 15px;
+    color: #969696;
+    text-align: center;
   }
 `;
 
@@ -58,8 +86,10 @@ const RecipeSmall = ({ title, id, imageSrc, readyInMinutes, onClick }) => {
 				<img src={imageSrc} alt='small dish'/>
 			</Image>
 			<Content>
-				<header><h4>{title}</h4></header>
-				<div>{readyInMinutes} min cooktime</div>
+        <div>
+          <header><h4>{title}</h4></header>
+          <p>{readyInMinutes} min cooktime</p>
+        </div>
 			</Content>
 		</StyledRecipeSmall>
 	);
