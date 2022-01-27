@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import { 
-	selectCurrentRecipeId,
 	selectRecipeSummary,
 	selectRecipeIngredients,
 	selectRecipeNutritionValues,
@@ -36,19 +35,13 @@ const StyledRecipe = styled.article`
 `;
 
 const Recipe = () => {
-	const id = useSelector(selectCurrentRecipeId);
-
 	const summary = useSelector(state => selectRecipeSummary(state, 289));
 	const ingredients = useSelector(state => selectRecipeIngredients(state, 4));
 	const nutrients = useSelector(
 		state => selectRecipeNutritionValues(state, ['Calories', 'Fat', 'Carbohydrates', 'Protein'])
 	);
+	const imageSrc = useSelector(selectRecipeImgSrc);
 
-	const imageSrc = useSelector(state => selectRecipeImgSrc(state, id));
-
-	
-	
-	
 	return (
 		<StyledRecipe>
 			<Summary { ...summary } />
@@ -58,19 +51,5 @@ const Recipe = () => {
 		</StyledRecipe>
 	);
 };
-
-
-
-function prepareNutrients(nutrients) {
-	return nutrients
-		.filter(({ name }) => ['Calories', 'Fat', 'Carbohydrates', 'Protein'].includes(name))
-		.map(nutrient => {
-			const item = { ...nutrient,  amount: Math.round(nutrient.amount) };
-			if (item.name === 'Carbohydrates') {
-				return { ...item, name: 'Carbs' }
-			}
-			return item;
-		});
-}
 
 export default Recipe;

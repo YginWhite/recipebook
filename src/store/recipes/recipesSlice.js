@@ -101,7 +101,10 @@ export const selectRecipeNutritionValues = createSelector(
 	}
 );
 
-
+export const selectRecipeImgSrc = createSelector(
+	selectCurrentRecipe,
+	recipe => recipe.image
+);
 
 
 
@@ -123,10 +126,6 @@ export const selectRecipeById = createSelector(
 	(recipes, recipeId) => recipes.filter(({ id }) => recipeId === id)[0],
 );
 
-export const selectRecipeImgSrc = createSelector(
-	selectRecipeById,
-	recipe => recipe.image
-);
 
 export const selectSummaries = createSelector(
 	selectRecipes,
