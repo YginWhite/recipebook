@@ -8,6 +8,11 @@ import Recipes from '../../blocks/Recipes/Recipes';
 
 const StyledMain = styled.section`
 	padding-top: 17.81px;
+
+	.recipes {
+		margin-top: 23.74px;
+		margin-left: 59.35px;
+	}
 `;
 
 const Header = styled.header`

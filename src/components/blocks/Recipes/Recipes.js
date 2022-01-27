@@ -6,15 +6,19 @@ import RecipeSmall from './RecipeSmall/RecipeSmall';
 import { selectShortRecipesInfo, currentRecipeIdIsSet } from '../../../store/recipes/recipesSlice';
 
 const StyledRecipes = styled.section`
-	margin-left: 84.17px;
-  margin-top: 23.74px;
-  padding-bottom: 39.93px;
+	
 `;
 
 const Header = styled.header`
-	font-family: 'Arima Madurai', cursive;
-  font-size: 23.98px;
-  color: #404040;
+  h3 {
+  	margin: 0;
+  	font-family: 'Arima Madurai', cursive;
+  	font-style: normal;
+		font-weight: 800;
+		font-size: 23.9784px;
+		line-height: 39px;
+		color: #404040;
+  }
 `;
 
 const Items = styled.div`
@@ -29,7 +33,7 @@ const Recipes = () => {
 	const onRecipeClicked = (id) => dispatch(currentRecipeIdIsSet(id)); 
 
 	return (
-		<StyledRecipes>
+		<StyledRecipes className='recipes'>
 			<Header><h3>More recipies</h3></Header>
 			<Items>
 				{recipesInfo.map(item => <RecipeSmall key={item.id} { ...item } onClick={onRecipeClicked}/>)}
