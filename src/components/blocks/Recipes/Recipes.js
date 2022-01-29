@@ -3,7 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 import RecipeSmall from './RecipeSmall/RecipeSmall';
-import { selectShortRecipesDescription, currentRecipeIdIsSet } from '../../../store/recipes/recipesSlice';
+import { 
+	selectShortRecipesDescription,
+	selectLastDisplayedRecipeInd,
+	selectLoadedRecipesAmount,
+	selectDispalyedRecipesAmount,
+
+	currentRecipeIdIsSet,
+	lastDisplayedRecipeIndIsSet
+} from '../../../store/recipes/recipesSlice';
 
 const StyledRecipes = styled.section``;
 
@@ -43,17 +51,39 @@ const Button = styled.button`
 
 const Recipes = () => {
 	const dispatch = useDispatch();
-	const recipesInfo = useSelector(state => selectShortRecipesDescription(state, 5));
 
-	const onRecipeClicked = (id) => dispatch(currentRecipeIdIsSet(id)); 
+	const recipesDescription = useSelector(selectShortRecipesDescription);
+	const lastDisplayedRecipeInd = useSelector(selectLastDisplayedRecipeInd);
+	const loadedRecipesAmount = useSelector(selectLoadedRecipesAmount);
+	const displayedRecipesAmount = useSelector(selectDispalyedRecipesAmount);
+
+	const onRecipeClicked = (id) => dispatch(currentRecipeIdIsSet(id));
+
+	const onRecipesBack = () => {
+		let nextLastDisplayedRecipeInd = lastDisplayedRecipeInd - displayedRecipesAmount;
+		if (nextLastDisplayedRecipeInd < displayedRecipesAmount - 1) {
+			nextLastDisplayedRecipeInd = displayedRecipesAmount - 1;
+		}
+		dispatch(lastDisplayedRecipeIndIsSet(nextLastDisplayedRecipeInd));
+	};
+
+	const onRecipesForward = () => {
+		let nextLastDisplayedRecipeInd = lastDisplayedRecipeInd + displayedRecipesAmount;
+		if (nextLastDisplayedRecipeInd > loadedRecipesAmount - 1) {
+			nextLastDisplayedRecipeInd = loadedRecipesAmount - 1;
+		}
+		dispatch(lastDisplayedRecipeIndIsSet(nextLastDisplayedRecipeInd));
+	}
 
 	return (
 		<StyledRecipes className='recipes'>
 			<Header><h3>More recipies</h3></Header>
 			<Items>
-				<Button>❮</Button>
-				{recipesInfo.map(item => <RecipeSmall key={item.id} { ...item } onClick={onRecipeClicked}/>)}
-				<Button>❯</Button>
+				<Button onClick={onRecipesBack}>❮</Button>
+
+				{recipesDescription.map(item => <RecipeSmall key={item.id} { ...item } onClick={onRecipeClicked}/>)}
+
+				<Button onClick={onRecipesForward}>❯</Button>
 			</Items>
 		</StyledRecipes>
 	);

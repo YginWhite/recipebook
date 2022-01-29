@@ -7,12 +7,16 @@ import { storage } from '../../services/storage';
 //const RECIPES_RECEIVED = 'recipes/recipesReceived';
 const RECIPES_LOADED = 'recipes/recipesLoaded';
 const RECIPES_CURRENT_RECIPE_ID_IS_SET = 'recipes/currentRecipeIdIsSet';
+const RECIPES_LAST_DISPLAYED_RECIPE_IND_IS_SET = 'recipes/lastDisplayedRecipeIndIsSet';
 
 
 const initialState = {
-	data: [],
-	isLoading: false,
-	currentRecipeId: null
+	data: [],								      // recipes data
+	isLoading: false,             // loading status
+	currentRecipeId: null,	      // current displayed recipe's id
+	amount: 5,                    // number of displayed recipes 
+	lastDisplayedRecipeInd: null, // ind of the last displayed recipe at a time
+	offset: 0                     // the number of recipes to skip when fetching from the server 
 };
 
 
@@ -22,6 +26,8 @@ export default function recipesReducer(state = initialState, action) {
 			return { ...state, data: [ ...state.data, ...action.payload ] };
 		case RECIPES_CURRENT_RECIPE_ID_IS_SET:
 			return { ...state, currentRecipeId: action.payload };
+		case RECIPES_LAST_DISPLAYED_RECIPE_IND_IS_SET:
+			return { ...state, lastDisplayedRecipeInd: action.payload };
 		default:
 			return state;
 	}
@@ -32,11 +38,15 @@ export default function recipesReducer(state = initialState, action) {
 //export const recipesReceived = () => ({ type: RECIPES_RECEIVED });
 export const recipesLoaded = (recipes) => ({ type: RECIPES_LOADED, payload: recipes });
 export const currentRecipeIdIsSet = (id) => ({ type: RECIPES_CURRENT_RECIPE_ID_IS_SET, payload: id });
+export const lastDisplayedRecipeIndIsSet = (ind) => ({ type: RECIPES_LAST_DISPLAYED_RECIPE_IND_IS_SET, payload: ind });
 
 
 //export const selectLoadingFlag = state => state.recipes.isLoading;
 export const selectRecipes = state => state.recipes.data;
 export const selectCurrentRecipeId = state => state.recipes.currentRecipeId;
+export const selectLastDisplayedRecipeInd = state => state.recipes.lastDisplayedRecipeInd;
+export const selectLoadedRecipesAmount = state => state.recipes.data.length;
+export const selectDispalyedRecipesAmount = state => state.recipes.amount;
 
 export const selectCurrentRecipe = createSelector(
 	selectRecipes,
@@ -104,15 +114,15 @@ export const selectRecipeImgSrc = createSelector(
 
 export const selectShortRecipesDescription = createSelector(
 	selectRecipes,
-	(state, amount) => amount,
-	(recipes, amount) => {
-		const descriptions = recipes.map(
+	selectDispalyedRecipesAmount,
+	selectLastDisplayedRecipeInd,
+	(recipes, amount, ind) => recipes
+		.slice(ind - amount + 1, ind + 1)
+		.map(
 			({ title, id, image, readyInMinutes  }) => ({ title, id, imageSrc: image, readyInMinutes })
-		);
-		if (amount) return descriptions.slice(0, amount);
-		return descriptions;
-	}
+		)
 );
+
 
 // export const selectRecipeIds = createSelector(
 // 	selectRecipes,
@@ -131,8 +141,12 @@ export const loadRecipes = () =>
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {
 				const recipes = storage.getRecipes() || api.getRecipes();
+				const amount = getState().recipes.amount;
+
 				dispatch(recipesLoaded(recipes));
 				dispatch(currentRecipeIdIsSet(recipes[0].id));
+				dispatch(lastDisplayedRecipeIndIsSet(amount - 1));
+
 				resolve();
 			}, 0);
 		});
