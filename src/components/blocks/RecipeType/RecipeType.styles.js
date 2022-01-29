@@ -1,0 +1,22 @@
+import styled from 'styled-components';
+
+export const StyledRecipeType = styled.ul`
+	margin: 0;
+	padding: 0;
+	width: 623.7px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Item = styled.li`
+  h2 {
+  	margin: 0;
+  	font-family: Roboto, sans-serif;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 17.5254px;
+		line-height: 21px;
+		color: ${props => props.selected ? '#404040' : '#969696'};
+  }
+`;
