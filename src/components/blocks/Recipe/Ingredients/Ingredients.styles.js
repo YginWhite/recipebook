@@ -5,7 +5,6 @@ export const StyledIngredients = styled.section``;
 export const Header = styled.header`
   h4 {
     font-size: 1.214em;
-    line-height: 1.647;
 		color: #969696;
   }
 `;

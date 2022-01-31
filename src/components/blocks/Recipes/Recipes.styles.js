@@ -5,7 +5,6 @@ export const StyledRecipes = styled.section``;
 export const Header = styled.header`
   h3 {
 		font-size: 1.499em;
-		line-height: 1.626;
 		color: #404040;
   }
 `;

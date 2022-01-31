@@ -39,7 +39,6 @@ export const Content = styled.div`
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 0.944em;
-    line-height: 1.192;
     color: #000000;
     text-align: center;
   }
@@ -63,7 +62,6 @@ export const Content = styled.div`
     padding: 0;
     margin-bottom: 1.188em;
     font-size: 0.809em;
-    line-height: 1.158;
     color: #969696;
     text-align: center;
   }

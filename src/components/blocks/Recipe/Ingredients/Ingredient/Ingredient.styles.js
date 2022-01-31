@@ -29,14 +29,12 @@ export const Description = styled.div`
 
 	h5 {
 		font-size: 0.659em;
-		line-height: 1.137;
 		color: #404040;
 	}
 
 	& div:last-child {
 		margin-top: 0.313em;
 		font-size: 0.507em;
-		line-height: 1.230;
 		font-weight: 500;
 		color: #969696;
 	}
