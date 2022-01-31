@@ -1,5 +1,6 @@
 body {
-	font: normal 400 1em 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
   background-color: #E5E5E5;
 }
 
@@ -14,4 +15,29 @@ h1, h3, h4 {
 
 h2, h5 {
 	font-weight: 500;
+}
+
+@media only screen and (max-width: 576px) {
+  body {
+    font-size: 0.7em;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  body {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  body {
+    font-size: 0.9em;
+  }
+}
+
+
+@media only screen and (min-width: 993px) {
+  body {
+    font-size: 1em;
+  }
 }

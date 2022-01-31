@@ -4,12 +4,8 @@ export const StyledRecipes = styled.section``;
 
 export const Header = styled.header`
   h3 {
-  	margin: 0;
-  	font-family: 'Arima Madurai', cursive;
-  	font-style: normal;
-		font-weight: 800;
-		font-size: 23.9784px;
-		line-height: 39px;
+		font-size: 1.499em;
+		line-height: 1.626;
 		color: #404040;
   }
 `;
@@ -30,8 +26,6 @@ export const Button = styled.button`
   background-color: inherit;
   cursor: pointer;
   color: #969696;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
   font-weight: 500;
-  font-size: 15.107px;
+  font-size: 0.944em;
 `;

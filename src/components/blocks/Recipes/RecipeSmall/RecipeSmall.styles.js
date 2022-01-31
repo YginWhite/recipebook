@@ -36,12 +36,10 @@ export const Content = styled.div`
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
 
   h4 {
-    margin: 0;
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
     font-weight: 500;
-    font-size: 15.107px;
-    line-height: 18px;
+    font-size: 0.944em;
+    line-height: 1.192;
     color: #000000;
     text-align: center;
   }
@@ -64,11 +62,8 @@ export const Content = styled.div`
     margin: 0;
     padding: 0;
     margin-bottom: 19px;
-  	font-family: 'Roboto', sans-serif;
-  	font-style: normal;
-    font-weight: 400;
-    font-size: 12.9488px;
-    line-height: 15px;
+    font-size: 0.809em;
+    line-height: 1.158;
     color: #969696;
     text-align: center;
   }
