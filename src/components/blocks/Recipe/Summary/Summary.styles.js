@@ -4,8 +4,7 @@ export const StyledSummary = styled.section``;
 
 export const Header = styled.header`
   h3 {
-  	margin: 0;
-		font: normal 800 1.498em 'Arima Madurai', cursive;
+		font-size: 1.498em;
 		color: #404040;
   }
 `;

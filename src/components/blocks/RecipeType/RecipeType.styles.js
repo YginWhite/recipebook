@@ -11,8 +11,6 @@ export const StyledRecipeType = styled.ul`
 
 export const Item = styled.li`
   h2 {
-  	margin: 0;
-		font-weight: 500;
 		font-size: 1.095em;
 		color: ${props => props.selected ? '#404040' : '#969696'};
   }

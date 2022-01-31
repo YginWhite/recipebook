@@ -22,9 +22,7 @@ export const Value = styled.div`
 
 export const Name = styled.header`
   h5 {
-    margin: 0;
     font-size: 0.811em;
-    font-weight: 500;
     color: #000000;
   }
 `;

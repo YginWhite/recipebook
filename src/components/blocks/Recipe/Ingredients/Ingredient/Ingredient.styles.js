@@ -28,10 +28,8 @@ export const Description = styled.div`
 	padding-top: 6px;
 
 	h5 {
-		margin: 0;
 		font-size: 0.659em;
 		line-height: 1.137;
-		font-weight: 500;
 		color: #404040;
 	}
 
