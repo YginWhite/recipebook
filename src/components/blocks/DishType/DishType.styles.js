@@ -7,7 +7,7 @@ export const StyledDishType = styled.ul`
   height: 357.17px;
   padding: 0;
   margin: 0;
-  margin-left: -23px;
+  margin-left: -1.438em;
   list-style: none;
 `;
 
@@ -25,7 +25,7 @@ export const Item = styled.li`
   	display: block;
   	width: 9.71px;
   	height: 9.71px;
-  	margin: 4.47px auto 0 auto;
+  	margin: 0.279em auto 0 auto;
   	border-radius: 9.71px;
   	background-color: ${props => props.selected ? '#408EBA' : 'transparent'};
   }

@@ -16,16 +16,18 @@ export const Items = styled.div`
   align-content: space-between;
   justify-content: space-between;
   flex-wrap: wrap;
-  row-gap: 14.95px;
+  row-gap: 0.934em;
 `;
 
 export const Buttons = styled.div`
-	margin-top: 16.68px;
+	margin-top: 1.043em;
 
 	button {
-		padding: 7.12px 27.94px 7.82px 26.88px;
+    width: 124.86px;
+		padding: 7.12px 0 7.82px 0px;
+    text-align: center;
   	border: none;
-  	border-radius: 4.32px;
+  	border-radius: 0.27em;
   	background-color: #408EBA;
     font-size: 0.499em;
   	font-weight: 500;

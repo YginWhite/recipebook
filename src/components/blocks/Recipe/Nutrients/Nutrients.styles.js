@@ -11,14 +11,14 @@ export const Header = styled.header`
 `;
 
 export const Composition = styled.div`
-	margin: 11.19px 0 15.11px 0;
+	margin: 0.699em 0 0.944em 0;
   display: flex;
-  gap: 15.11px;
+  gap: 0.944em;
 `;
 
 export const Buttons = styled.div`
   display: flex;
-  gap: 24.06px;
+  gap: 1.504em;
 `;
 
 export const Button = styled.button`

@@ -1,21 +1,19 @@
 import styled from 'styled-components';
 
 export const StyledMain = styled.section`
-	padding-top: 17.81px;
-
 	.recipes {
-		margin-top: 23.74px;
-		margin-left: 59.35px;
+		margin-top: 1.484em;
+		margin-left: 3.709em;
 	}
 `;
 
 export const Header = styled.header`
-	padding-left: 59.35px;
+	padding-left: 3.709em;
 `;
 
 export const Body = styled.div`
 	display: flex;
 	align-items: center;
-	padding-top: 19.97px;
-	padding-left: 5.4px;
+	padding-top: 1.249em;
+	padding-left: 0.338em;
 `;

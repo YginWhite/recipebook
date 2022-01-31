@@ -10,11 +10,11 @@ export const Image = styled.figure`
 	box-sizing: border-box;
 	width: 49.39px;
 	margin: 0; 
-	padding: 5.65px 10.91px 6.35px 10.87px;
+	padding: 0.353em 0.682em 0.397em 0.679em;
 	border-style: solid;
   border-width: 0.51px 0.68px;
   border-color: #FFFFFF;
-  border-radius: 7.03px;
+  border-radius: 0.439em;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
 
   img {
@@ -24,8 +24,8 @@ export const Image = styled.figure`
 `;
 
 export const Description = styled.div`
-	padding-left: 6px;
-	padding-top: 6px;
+	padding-left: 0.375em;
+	padding-top: 0.375em;
 
 	h5 {
 		font-size: 0.659em;
@@ -34,7 +34,7 @@ export const Description = styled.div`
 	}
 
 	& div:last-child {
-		margin-top: 5px;
+		margin-top: 0.313em;
 		font-size: 0.507em;
 		line-height: 1.230;
 		font-weight: 500;

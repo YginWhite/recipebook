@@ -12,7 +12,7 @@ export const Header = styled.header`
 
 export const Items = styled.div`
 	display: flex;
-  gap: 48.56px;
+  gap: 3.035em;
   align-items: center;
 `;
 

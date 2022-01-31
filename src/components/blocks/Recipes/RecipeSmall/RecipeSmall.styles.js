@@ -32,7 +32,7 @@ export const Content = styled.div`
   height: 160px;
   border: 0px solid #FFFFFF;
   border-width: 1.69px 1.97px;
-  border-radius: 7.03px;
+  border-radius: 0.439em;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
 
   h4 {
@@ -61,7 +61,7 @@ export const Content = styled.div`
   p {
     margin: 0;
     padding: 0;
-    margin-bottom: 19px;
+    margin-bottom: 1.188em;
     font-size: 0.809em;
     line-height: 1.158;
     color: #969696;

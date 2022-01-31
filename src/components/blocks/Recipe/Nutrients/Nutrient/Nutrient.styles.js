@@ -10,7 +10,7 @@ export const StyledNutrient = styled.div`
   box-sizing: border-box;
   border: 0px solid #FFFFFF;
   border-width: 1.05px 0.97px;
-  border-radius: 7.03px;
+  border-radius: 0.439em;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
 `;
 
