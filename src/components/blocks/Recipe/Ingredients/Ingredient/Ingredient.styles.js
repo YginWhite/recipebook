@@ -29,21 +29,17 @@ export const Description = styled.div`
 
 	h5 {
 		margin: 0;
-  	font-family: 'Roboto', sans-serif;
-  	font-style: normal;
+		font-size: 0.659em;
+		line-height: 1.137;
 		font-weight: 500;
-		font-size: 10.5509px;
-		line-height: 12px;
 		color: #404040;
 	}
 
 	& div:last-child {
 		margin-top: 5px;
-  	font-family: 'Roboto', sans-serif;
-  	font-style: normal;
+		font-size: 0.507em;
+		line-height: 1.230;
 		font-weight: 500;
-		font-size: 8.1242px;
-		line-height: 10px;
 		color: #969696;
 	}
 `;

@@ -5,11 +5,7 @@ export const StyledIngredients = styled.section``;
 export const Header = styled.header`
   h4 {
   	margin: 0;
-  	font-family: 'Arima Madurai', cursive;
-  	font-style: normal;
-		font-weight: 800;
-		font-size: 19.4233px;
-		line-height: 32px;
+    font: 800 normal 1.214em/1.647 'Arima Madurai', cursive;
 		color: #969696;
   }
 `;
@@ -31,8 +27,7 @@ export const Buttons = styled.div`
   	border: none;
   	border-radius: 4.32px;
   	background-color: #408EBA;
-  	font-family: 'Roboto', sans-serif;
-  	font-size: 7.99px;
+    font-size: 0.499em;
   	font-weight: 500;
   	color: #FFFFFF;
 	}

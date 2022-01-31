@@ -15,8 +15,7 @@ export const StyledNutrient = styled.div`
 `;
 
 export const Value = styled.div`
-	font-family: 'Roboto', sans-serif;
-  font-size: 19.42px;
+  font-size: 1.214em;
   font-weight: 500;
   color: #000000;
 `;
@@ -24,16 +23,14 @@ export const Value = styled.div`
 export const Name = styled.header`
   h5 {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 12.97px;
+    font-size: 0.811em;
     font-weight: 500;
     color: #000000;
   }
 `;
 
 export const Unit = styled.div`
-	font-family: 'Roboto', sans-serif;
-  font-size: 12.95px;
+  font-size: 0.809em;
   font-weight: 500;
   color: #969696;
 `;

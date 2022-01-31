@@ -5,11 +5,7 @@ export const StyledNutrients = styled.section``;
 export const Header = styled.header`
   h4 {
     margin: 0;
-    font-family: 'Arima Madurai', cursive;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 19.4233px;
-    line-height: 32px;
+    font: normal 800 1.214em/1.648 'Arima Madurai', cursive;
     color: #969696;
   }
 `;
@@ -32,8 +28,7 @@ export const Button = styled.button`
   border: none;
   border-radius: 4.32px;
   background-color: #408EBA;
-  font-family: 'Roboto', sans-serif;
-  font-size: 7.99px;
+  font-size: 0.499em;
   font-weight: 500;
   color: #FFFFFF;
 `;

@@ -1,6 +1,5 @@
 body {
   box-sizing: border-box;
   background-color: #E5E5E5;
-  font-size: 10px;
-  font-family: 'Roboto', sans-serif;
+  font: normal 400 1em 'Roboto', sans-serif;
 }
