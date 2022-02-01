@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../utils/media';
 
 export const StyledMain = styled.section`
 	.recipes {
@@ -18,4 +19,8 @@ export const Body = styled.div`
 	align-items: center;
 	padding-top: 1.249em;
 	padding-left: 0.338em;
+
+	@media ${device.smallDevices} {
+    flex-direction: column;
+  }
 `;

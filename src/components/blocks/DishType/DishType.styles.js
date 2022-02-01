@@ -5,10 +5,7 @@ export const StyledDishType = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   height: 357.17px;
-  padding: 0;
-  margin: 0;
   margin-left: -1.438em;
-  list-style: none;
 `;
 
 export const Item = styled.li`
