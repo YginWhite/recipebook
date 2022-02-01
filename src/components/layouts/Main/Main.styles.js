@@ -11,6 +11,10 @@ export const StyledMain = styled.section`
 export const Header = styled.header`
 	nav {
 		padding-left: 3.709em;
+
+		@media ${device.smallDevices} {
+    	padding-left: initial;
+  	}
 	}
 `;
 
@@ -21,6 +25,7 @@ export const Body = styled.div`
 	padding-left: 0.338em;
 
 	@media ${device.smallDevices} {
-    flex-direction: column;
+    flex-direction: column; 
+    align-items: initial;
   }
 `;
