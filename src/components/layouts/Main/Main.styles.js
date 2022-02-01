@@ -8,7 +8,9 @@ export const StyledMain = styled.section`
 `;
 
 export const Header = styled.header`
-	padding-left: 3.709em;
+	nav {
+		padding-left: 3.709em;
+	}
 `;
 
 export const Body = styled.div`
