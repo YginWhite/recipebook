@@ -18,27 +18,27 @@ export const StyledImage = styled.section`
     margin-top: 1em;
     box-shadow: 0px 7px 20px -12px rgba(0,0,0,0.3);
   }
+`;
 
-  figure {
-    margin: 0;
-    width: 420px;
-    height: 420px;
+export const Container = styled.figure`
+  margin: 0;
+  width: 420px;
+  height: 420px;
 
-    @media ${device.smallDevices} {
-      height: initial;
-      width: initial;
-    }
+  @media ${device.smallDevices} {
+    height: initial;
+    width: initial;
   }
+`;
 
-  img {
-    display: block;
-  	height: 420px;
-    margin-left: -105px;
+export const Img = styled.img`
+  display: block;
+  height: 420px;
+  margin-left: -105px;
 
-    @media ${device.smallDevices} {
-      height: initial;
-      width: 100%;
-      margin-left: initial;
-    }
+  @media ${device.smallDevices} {
+    height: initial;
+    width: 100%;
+    margin-left: initial;
   }
 `;
