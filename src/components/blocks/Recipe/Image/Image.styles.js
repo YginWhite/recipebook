@@ -21,7 +21,6 @@ export const StyledImage = styled.section`
 `;
 
 export const Container = styled.figure`
-  margin: 0;
   width: 420px;
   height: 420px;
 

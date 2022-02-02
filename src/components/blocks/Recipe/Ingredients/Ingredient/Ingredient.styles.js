@@ -16,7 +16,6 @@ export const StyledIngredient = styled.div`
 export const Image = styled.figure`
 	box-sizing: border-box;
 	width: 49.39px;
-	margin: 0; 
 	padding: 0.353em 0.682em 0.397em 0.679em;
 	border-style: solid;
   border-width: 0.51px 0.68px;
