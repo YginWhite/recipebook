@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { device } from '../../../../utils/media';
 
+
 export const StyledRecipeSmall = styled.div`
 	position: relative;
   width: 142.44px;
@@ -15,9 +16,10 @@ export const StyledRecipeSmall = styled.div`
   }
 `;
 
-export const Image = styled.figure`
+
+export const ImageContainer = styled.figure`
   box-sizing: border-box;
-	position: absolute;
+  position: absolute;
   top: 0;
   left: 22.66px;
   margin: 0;
@@ -31,13 +33,15 @@ export const Image = styled.figure`
   @media ${device.smallDevices} {
     left: 14px;
   }
-
-  img {
-  	height: 94.96px;
-  }
 `;
 
-export const Content = styled.div`
+
+export const Image = styled.img`
+  height: 94.96px;
+`;
+
+
+export const DescriptionContainer = styled.div`
   box-sizing: border-box;
   height: 160px;
   border: 0px solid #FFFFFF;
@@ -48,6 +52,32 @@ export const Content = styled.div`
   @media ${device.smallDevices} {
     height: 140px;
   }
+`;
+
+
+export const Description = styled.div`
+  height: 90px;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media ${device.smallDevices} {
+    height: 70px;
+    margin-top: 70px;
+  }
+`;
+
+
+export const Header = styled.header`
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5em;
+
+  @media ${device.smallDevices} {
+    height: 36px;
+  }
 
   h4 {
     font-family: 'Roboto', sans-serif;
@@ -56,37 +86,14 @@ export const Content = styled.div`
     color: #000000;
     text-align: center;
   }
+`;
 
-  div {
-    height: 90px;
-    margin-top: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
-    @media ${device.smallDevices} {
-      height: 70px;
-      margin-top: 70px;
-    }
-
-    header {
-      height: 56px;
-      display: flex;
-      align-items: center;
-      padding: 0 0.5em;
-
-      @media ${device.smallDevices} {
-        height: 36px;
-      }
-    }
-  }
-  
-  p {
-    margin: 0;
-    padding: 0;
-    margin-bottom: 1.188em;
-    font-size: 0.809em;
-    color: #969696;
-    text-align: center;
-  }
+export const ReadyInMinutes = styled.p`
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1.188em;
+  font-size: 0.809em;
+  color: #969696;
+  text-align: center;
 `;
