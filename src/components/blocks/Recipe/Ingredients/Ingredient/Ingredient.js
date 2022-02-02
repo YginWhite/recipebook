@@ -2,17 +2,17 @@ import React from 'react';
 
 import image from '../../../../../assets/images/chicken.png';
 
-import { StyledIngredient, Image, Description } from './Ingredient.styles';
+import { StyledIngredient, Container, Img, Description, Header, Content } from './Ingredient.styles';
 
 const Ingredient = ({ name, original, imgSrc, imageName }) => {
 	return (
 		<StyledIngredient>
-			<Image>
-				<img src={imgSrc} alt={imageName}/>
-			</Image>
+			<Container>
+				<Img src={imgSrc} alt={imageName}/>
+			</Container>
 			<Description>
-				<header><h5>{name}</h5></header>
-				<div>{original}</div>
+				<header><Header>{name}</Header></header>
+				<Content>{original}</Content>
 			</Description>
 		</StyledIngredient>
 	);

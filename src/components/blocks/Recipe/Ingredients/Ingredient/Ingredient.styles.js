@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { device } from '../../../../../utils/media';
 
+
 export const StyledIngredient = styled.div`
 	width: 139.8px;
 	height: 39.57px;
@@ -13,11 +14,12 @@ export const StyledIngredient = styled.div`
   }
 `;
 
-export const Image = styled.figure`
-	box-sizing: border-box;
-	width: 49.39px;
-	padding: 0.353em 0.682em 0.397em 0.679em;
-	border-style: solid;
+
+export const Container = styled.figure`
+  box-sizing: border-box;
+  width: 49.39px;
+  padding: 0.353em 0.682em 0.397em 0.679em;
+  border-style: solid;
   border-width: 0.51px 0.68px;
   border-color: #FFFFFF;
   border-radius: 0.439em;
@@ -27,34 +29,38 @@ export const Image = styled.figure`
     width: initial;
     padding: 0.353em 0.682em 0.397em 0.679em;
   }
-
-  img {
-  	width: 26.42px;
-  	height: 26.37px;
-  }
 `;
+
+
+export const Img = styled.img`
+  width: 26.42px;
+  height: 26.37px;
+`;
+
 
 export const Description = styled.div`
 	padding-left: 0.375em;
 	padding-top: 0.375em;
+`;
 
-	h5 {
-		font-size: 0.659em;
-		color: #404040;
 
-		@media ${device.smallDevices} {
-    	font-size: 0.8em;
-  	}
-	}
+export const Header = styled.h5`
+  font-size: 0.659em;
+  color: #404040;
 
-	& div:last-child {
-		margin-top: 0.313em;
-		font-size: 0.507em;
-		font-weight: 500;
-		color: #969696;
+  @media ${device.smallDevices} {
+    font-size: 0.8em;
+  }
+`;
 
-		@media ${device.smallDevices} {
-    	font-size: 0.7em;
-  	}
-	}
+
+export const Content = styled.div`
+  margin-top: 0.313em;
+  font-size: 0.507em;
+  font-weight: 500;
+  color: #969696;
+
+  @media ${device.smallDevices} {
+    font-size: 0.7em;
+  }
 `;
