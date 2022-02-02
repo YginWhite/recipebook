@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { device } from '../../../utils/media';
 
+
 export const StyledDishType = styled.ul`
 	display: flex;
   flex-direction: column;
@@ -16,36 +17,37 @@ export const StyledDishType = styled.ul`
   }
 `;
 
+
 export const Item = styled.li`
   transform: rotate(-90deg);
 
   @media ${device.smallDevices} {
     transform: initial;
   }
+`;
 
-  h2 {
-    font-size: 1.095em;
-    text-align: center;
-    color: ${props => props.selected ? '#404040' : '#969696'};
 
-    @media ${device.smallDevices} {
-      font-size: 0.8em;
-    }
+export const Flag = styled.div`
+  width: 9.71px;
+  height: 9.71px;
+  margin: 0.279em auto 0 auto;
+  border-radius: 9.71px;
+  background-color: ${props => props.selected ? '#408EBA' : 'transparent'};
+
+  @media ${device.smallDevices} {
+    width: 5px;
+    height: 5px;
+    margin-bottom: 7px;
   }
+`;
 
-  &:after {
-  	content: '';
-  	display: block;
-  	width: 9.71px;
-  	height: 9.71px;
-  	margin: 0.279em auto 0 auto;
-  	border-radius: 9.71px;
-  	background-color: ${props => props.selected ? '#408EBA' : 'transparent'};
 
-    @media ${device.smallDevices} {
-      width: 5px;
-      height: 5px;
-      margin-bottom: 7px;
-    }
+export const Header = styled.h2`
+  font-size: 1.095em;
+  text-align: center;
+  color: ${props => props.selected ? '#404040' : '#969696'};
+
+  @media ${device.smallDevices} {
+    font-size: 0.8em;
   }
 `;
