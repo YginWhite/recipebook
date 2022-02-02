@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { Button, ButtonWithoutBg } from '../../../common/Buttons/Buttons';
 import Nutrient from './Nutrient/Nutrient';
 
-import { StyledNutrients, Header, Composition, Buttons, Button, AddButton } from './Nutrients.styles';
+import { StyledNutrients, Header, Composition, Buttons } from './Nutrients.styles';
 
 const Nutrients = ({ nutrients }) => {
 	return (
@@ -13,7 +13,7 @@ const Nutrients = ({ nutrients }) => {
 			</Composition>
 			<Buttons>
 				<Button>Recipe</Button>
-				<AddButton>Add to favorites</AddButton>
+				<ButtonWithoutBg>Add to favorites</ButtonWithoutBg>
 			</Buttons>
 		</StyledNutrients>
 	);

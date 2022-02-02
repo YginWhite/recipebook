@@ -26,16 +26,4 @@ export const Items = styled.div`
 
 export const Buttons = styled.div`
 	margin-top: 1.043em;
-
-	button {
-    width: 124.86px;
-		padding: 7.12px 0 7.82px 0px;
-    text-align: center;
-  	border: none;
-  	border-radius: 0.27em;
-  	background-color: #408EBA;
-    font-size: 0.499em;
-  	font-weight: 500;
-  	color: #FFFFFF;
-	}
 `;

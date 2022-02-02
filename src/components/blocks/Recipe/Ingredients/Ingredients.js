@@ -1,6 +1,6 @@
 import React from 'react';
-
 import Ingredient from './Ingredient/Ingredient';
+import { Button } from '../../../common/Buttons/Buttons';
 
 import { StyledIngredients, Header, Items, Buttons } from './Ingredients.styles';
 
@@ -12,7 +12,7 @@ const Ingredients = ({ ingredients }) => {
 				{ingredients.map(ingredient => <Ingredient key={ingredient.name} { ...ingredient }/>)}
 			</Items>
 			<Buttons>
-				<button>View all ingredients</button>
+				<Button>View all ingredients</Button>
 			</Buttons>
 		</StyledIngredients>
 	);
