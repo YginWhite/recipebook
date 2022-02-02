@@ -44,13 +44,14 @@ const Recipes = () => {
 	return (
 		<StyledRecipes className='recipes'>
 			<Header><h3>More recipies</h3></Header>
-			<Items>
+			<div>
 				<Button onClick={onRecipesBack}>❮</Button>
-
-				{recipesDescription.map(item => <RecipeSmall key={item.id} { ...item } onClick={onRecipeClicked}/>)}
-
+				<Items>
+					{recipesDescription.map(item => <RecipeSmall key={item.id} { ...item } onClick={onRecipeClicked}/>)}
+				</Items>
 				<Button onClick={onRecipesForward}>❯</Button>
-			</Items>
+			</div>
+			
 		</StyledRecipes>
 	);
 };

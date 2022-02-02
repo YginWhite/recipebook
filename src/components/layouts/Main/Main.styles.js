@@ -5,6 +5,10 @@ export const StyledMain = styled.section`
 	.recipes {
 		margin-top: 1.484em;
 		margin-left: 3.709em;
+
+		@media ${device.smallDevices} {
+    	margin-left: initial;
+  	}
 	}
 `;
 

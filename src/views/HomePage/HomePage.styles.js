@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../utils/media';
 
 export const StyledHomePage = styled.div`
 	box-sizing: border-box;
@@ -8,4 +9,8 @@ export const StyledHomePage = styled.div`
   border-color: #FFFFFF;
   border-radius: 1.25em;
   background-color: #F0F7FF;
+
+  @media ${device.smallDevices} {
+    padding: 0.3em 0.7em 1em 0.7em;
+  }
 `;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../../utils/media';
 
 export const StyledIngredients = styled.section``;
 
@@ -16,6 +17,11 @@ export const Items = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 0.934em;
+
+  @media ${device.smallDevices} {
+    width: initial;
+    row-gap: 0.5em;
+  }
 `;
 
 export const Buttons = styled.div`

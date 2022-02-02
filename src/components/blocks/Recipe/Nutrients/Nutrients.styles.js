@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../../utils/media';
 
 export const StyledNutrients = styled.section``;
 
@@ -13,6 +14,10 @@ export const Composition = styled.div`
 	margin: 0.699em 0 0.944em 0;
   display: flex;
   gap: 0.944em;
+
+  @media ${device.smallDevices} {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Buttons = styled.div`

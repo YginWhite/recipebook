@@ -1,9 +1,16 @@
 import styled from 'styled-components';
+import { device } from '../../../../../utils/media';
 
 export const StyledIngredient = styled.div`
 	width: 139.8px;
 	height: 39.57px;
   display: flex;
+
+  @media ${device.smallDevices} {
+    width: initial;
+    height: initial;
+    justify-content: space-between;
+  }
 `;
 
 export const Image = styled.figure`
@@ -16,6 +23,11 @@ export const Image = styled.figure`
   border-color: #FFFFFF;
   border-radius: 0.439em;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
+
+  @media ${device.smallDevices} {
+    width: initial;
+    padding: 0.353em 0.682em 0.397em 0.679em;
+  }
 
   img {
   	width: 26.42px;
@@ -30,6 +42,10 @@ export const Description = styled.div`
 	h5 {
 		font-size: 0.659em;
 		color: #404040;
+
+		@media ${device.smallDevices} {
+    	font-size: 0.8em;
+  	}
 	}
 
 	& div:last-child {
@@ -37,5 +53,9 @@ export const Description = styled.div`
 		font-size: 0.507em;
 		font-weight: 500;
 		color: #969696;
+
+		@media ${device.smallDevices} {
+    	font-size: 0.7em;
+  	}
 	}
 `;

@@ -1,6 +1,13 @@
 import styled from 'styled-components';
+import { device } from '../../../utils/media';
 
-export const StyledRecipes = styled.section``;
+export const StyledRecipes = styled.section`
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
 
 export const Header = styled.header`
   h3 {
@@ -12,7 +19,13 @@ export const Header = styled.header`
 export const Items = styled.div`
 	display: flex;
   gap: 3.035em;
-  align-items: center;
+
+  @media ${device.smallDevices} {
+    width: 74%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
 `;
 
 export const Button = styled.button`
@@ -27,4 +40,10 @@ export const Button = styled.button`
   color: #969696;
   font-weight: 500;
   font-size: 0.944em;
+
+  @media ${device.smallDevices} {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+  }
 `;

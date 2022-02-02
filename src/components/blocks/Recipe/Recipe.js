@@ -26,9 +26,9 @@ const Recipe = () => {
 	return (
 		<StyledRecipe>
 			<Summary { ...summary } />
+			<Image src={imageSrc}/>
 			<Ingredients ingredients={ingredients}/>
 			<Nutrients nutrients={nutrients}/>
-			<Image src={imageSrc}/>
 		</StyledRecipe>
 	);
 };

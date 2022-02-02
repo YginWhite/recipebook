@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../../utils/media';
 
 export const StyledImage = styled.section`
 	position: absolute;
@@ -9,15 +10,35 @@ export const StyledImage = styled.section`
   overflow: hidden;
   box-shadow: 0px 7px 40px -12px rgba(0,0,0,0.3);
 
+  @media ${device.smallDevices} {
+    position: initial;
+    right: initial;
+    top: initial;
+    border-radius: 1em;
+    margin-top: 1em;
+    box-shadow: 0px 7px 20px -12px rgba(0,0,0,0.3);
+  }
+
   figure {
     margin: 0;
-    height: 420px;
     width: 420px;
+    height: 420px;
+
+    @media ${device.smallDevices} {
+      height: initial;
+      width: initial;
+    }
   }
 
   img {
     display: block;
   	height: 420px;
     margin-left: -105px;
+
+    @media ${device.smallDevices} {
+      height: initial;
+      width: 100%;
+      margin-left: initial;
+    }
   }
 `;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../../../utils/media';
 
 export const StyledNutrient = styled.div`
 	width: 70.14px;
@@ -12,6 +13,11 @@ export const StyledNutrient = styled.div`
   border-width: 1.05px 0.97px;
   border-radius: 0.439em;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
+
+  @media ${device.smallDevices} {
+    width: 50px;
+    height: 60px;
+  }
 `;
 
 export const Value = styled.div`

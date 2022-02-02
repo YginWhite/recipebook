@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../../utils/media';
 
 export const StyledRecipeSmall = styled.div`
 	position: relative;
@@ -7,6 +8,11 @@ export const StyledRecipeSmall = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+
+  @media ${device.smallDevices} {
+    height: 170px;
+    width: 122.44px;
+  }
 `;
 
 export const Image = styled.figure`
@@ -22,6 +28,10 @@ export const Image = styled.figure`
   border-radius: 50px;
   overflow: hidden;
 
+  @media ${device.smallDevices} {
+    left: 14px;
+  }
+
   img {
   	height: 94.96px;
   }
@@ -34,6 +44,10 @@ export const Content = styled.div`
   border-width: 1.69px 1.97px;
   border-radius: 0.439em;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
+
+  @media ${device.smallDevices} {
+    height: 140px;
+  }
 
   h4 {
     font-family: 'Roboto', sans-serif;
@@ -50,10 +64,20 @@ export const Content = styled.div`
     flex-direction: column;
     justify-content: space-between;
 
+    @media ${device.smallDevices} {
+      height: 70px;
+      margin-top: 70px;
+    }
+
     header {
       height: 56px;
       display: flex;
       align-items: center;
+      padding: 0 0.5em;
+
+      @media ${device.smallDevices} {
+        height: 36px;
+      }
     }
   }
   
