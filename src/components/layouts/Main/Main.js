@@ -11,9 +11,7 @@ const Main = () => {
 	return (
 		<StyledMain>
 			<Header>
-				<nav>
-					<RecipeType/>
-				</nav>
+				<RecipeType/>
 			</Header>
 
 			<Body>
