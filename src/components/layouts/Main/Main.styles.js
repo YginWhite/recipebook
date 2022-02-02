@@ -9,6 +9,10 @@ export const StyledMain = styled.section`
 		@media ${device.smallDevices} {
     	margin-left: initial;
   	}
+
+  	@media ${device.landscapePhonesAndUp} {
+    	margin-left: initial;
+  	}
 	}
 `;
 
@@ -17,6 +21,10 @@ export const Header = styled.header`
 		padding-left: 3.709em;
 
 		@media ${device.smallDevices} {
+    	padding-left: initial;
+  	}
+
+  	@media ${device.landscapePhonesAndUp} {
     	padding-left: initial;
   	}
 	}
@@ -29,6 +37,11 @@ export const Body = styled.div`
 	padding-left: 0.338em;
 
 	@media ${device.smallDevices} {
+    flex-direction: column; 
+    align-items: initial;
+  }
+
+  @media ${device.landscapePhonesAndUp} {
     flex-direction: column; 
     align-items: initial;
   }

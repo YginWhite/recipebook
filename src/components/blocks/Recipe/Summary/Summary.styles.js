@@ -13,6 +13,12 @@ export const Header = styled.header`
     	margin-bottom: 0.5em;
     	line-height: 1.2;
   	}
+
+    @media ${device.landscapePhonesAndUp} {  
+      text-align: center;
+      margin-bottom: 0.5em;
+      line-height: 1.2;
+    }
   }
 `;
 
@@ -23,6 +29,13 @@ export const Body = styled.div`
 	color: #404040;
 
 	@media ${device.smallDevices} {  
+    width: initial;
+    font-size: 0.9em;
+    line-height: 1.4em;
+    text-align: justify;
+  }
+
+  @media ${device.landscapePhonesAndUp} {  
     width: initial;
     font-size: 0.9em;
     line-height: 1.4em;

@@ -9,6 +9,10 @@ export const StyledRecipeType = styled.ul`
   @media ${device.smallDevices} {
     width: initial;
   }
+
+  @media ${device.landscapePhonesAndUp} {
+    width: initial;
+  }
 `;
 
 export const Item = styled.li`

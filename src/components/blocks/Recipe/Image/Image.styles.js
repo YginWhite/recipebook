@@ -18,6 +18,17 @@ export const StyledImage = styled.section`
     margin-top: 1em;
     box-shadow: 0px 7px 20px -12px rgba(0,0,0,0.3);
   }
+
+  @media ${device.landscapePhonesAndUp} {
+    position: initial;
+    right: initial;
+    top: initial;
+    border-radius: 1em;
+    box-shadow: 0px 7px 20px -12px rgba(0,0,0,0.3);
+    max-width: 556px;
+    margin: 0 auto;
+    margin-top: 1em;
+  }
 `;
 
 export const Container = styled.figure`
@@ -27,6 +38,12 @@ export const Container = styled.figure`
   @media ${device.smallDevices} {
     height: initial;
     width: initial;
+  }
+
+  @media ${device.landscapePhonesAndUp} {
+    height: initial;
+    width: initial;
+    max-width: 556px;
   }
 `;
 
@@ -38,6 +55,13 @@ export const Img = styled.img`
   @media ${device.smallDevices} {
     height: initial;
     width: 100%;
+    margin-left: initial;
+  }
+
+  @media ${device.landscapePhonesAndUp} {
+    height: initial;
+    width: 100%;
+    max-width: 556px;
     margin-left: initial;
   }
 `;

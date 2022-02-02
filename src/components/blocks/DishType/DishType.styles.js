@@ -15,6 +15,13 @@ export const StyledDishType = styled.ul`
     height: initial;
     margin-left: initial;
   }
+
+  @media ${device.landscapePhonesAndUp} {
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: initial;
+    margin-left: initial;
+  }
 `;
 
 
@@ -22,6 +29,10 @@ export const Item = styled.li`
   transform: rotate(-90deg);
 
   @media ${device.smallDevices} {
+    transform: initial;
+  }
+
+  @media ${device.landscapePhonesAndUp} {
     transform: initial;
   }
 `;
@@ -39,6 +50,12 @@ export const Flag = styled.div`
     height: 5px;
     margin-bottom: 7px;
   }
+
+  @media ${device.landscapePhonesAndUp} {
+    width: 7px;
+    height: 7px;
+    margin-bottom: 10px;
+  }
 `;
 
 
@@ -48,6 +65,10 @@ export const Header = styled.h2`
   color: ${props => props.selected ? '#404040' : '#969696'};
 
   @media ${device.smallDevices} {
+    font-size: 0.8em;
+  }
+
+  @media ${device.landscapePhonesAndUp} {
     font-size: 0.8em;
   }
 `;

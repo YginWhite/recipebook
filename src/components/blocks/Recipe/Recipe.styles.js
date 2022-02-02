@@ -17,6 +17,11 @@ export const StyledRecipe = styled.article`
     position: initial;
   }
 
+  @media ${device.landscapePhonesAndUp} {
+    width: initial;
+    position: initial;
+  }
+
   section.recipe-ingredients {
   	margin-top: 1.146em;
   }

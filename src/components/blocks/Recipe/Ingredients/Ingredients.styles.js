@@ -22,6 +22,11 @@ export const Items = styled.div`
     width: initial;
     row-gap: 0.5em;
   }
+
+  @media ${device.landscapePhonesAndUp} {
+    width: initial;
+    row-gap: 0.7em;
+  }
 `;
 
 export const Buttons = styled.div`

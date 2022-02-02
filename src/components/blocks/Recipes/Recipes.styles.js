@@ -26,6 +26,13 @@ export const Items = styled.div`
     flex-wrap: wrap;
     gap: 1em;
   }
+
+  @media ${device.landscapePhonesAndUp} {
+    width: 74%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
 `;
 
 export const Button = styled.button`
@@ -45,5 +52,11 @@ export const Button = styled.button`
     height: 30px;
     width: 30px;
     border-radius: 15px;
+  }
+
+  @media ${device.landscapePhonesAndUp} {
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
   }
 `;

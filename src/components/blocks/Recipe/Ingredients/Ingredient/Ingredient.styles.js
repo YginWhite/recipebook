@@ -12,6 +12,12 @@ export const StyledIngredient = styled.div`
     height: initial;
     justify-content: space-between;
   }
+
+  @media ${device.landscapePhonesAndUp} {
+    width: initial;
+    height: initial;
+    justify-content: space-between;
+  }
 `;
 
 
@@ -26,6 +32,11 @@ export const Container = styled.figure`
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
 
   @media ${device.smallDevices} {
+    width: initial;
+    padding: 0.353em 0.682em 0.397em 0.679em;
+  }
+
+  @media ${device.landscapePhonesAndUp} {
     width: initial;
     padding: 0.353em 0.682em 0.397em 0.679em;
   }
@@ -51,6 +62,10 @@ export const Header = styled.h5`
   @media ${device.smallDevices} {
     font-size: 0.8em;
   }
+
+  @media ${device.landscapePhonesAndUp} {
+    font-size: 0.7em;
+  }
 `;
 
 
@@ -62,5 +77,10 @@ export const Content = styled.div`
 
   @media ${device.smallDevices} {
     font-size: 0.7em;
+  }
+
+  @media ${device.landscapePhonesAndUp} {
+    font-size: 0.6em;
+    margin-top: 0.7em;
   }
 `;
