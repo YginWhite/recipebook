@@ -19,6 +19,12 @@ export const Header = styled.header`
       margin-bottom: 0.5em;
       line-height: 1.2;
     }
+
+    @media ${device.tabletsAndUp} {  
+      font-size: 1.2em;
+      line-height: 1.2;
+      margin-bottom: 0.5em;
+    }
   }
 `;
 

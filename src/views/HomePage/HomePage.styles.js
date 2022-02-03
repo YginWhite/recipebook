@@ -17,4 +17,8 @@ export const StyledHomePage = styled.div`
   @media ${device.landscapePhonesAndUp} {
     padding: 0.4em 1em 1em 1em;
   }
+
+  @media ${device.tabletsAndUp} {
+    padding: 0.4em 0.8em 1em 0.8em;
+  }
 `;

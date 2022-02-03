@@ -29,7 +29,13 @@ export const StyledImage = styled.section`
     margin: 0 auto;
     margin-top: 1em;
   }
+
+  @media ${device.tabletsAndUp} {
+    right: -164px;
+    top: 75px;
+  }
 `;
+
 
 export const Container = styled.figure`
   width: 420px;
@@ -45,7 +51,13 @@ export const Container = styled.figure`
     width: initial;
     max-width: 556px;
   }
+
+  @media ${device.tabletsAndUp} {
+    width: 320px;
+    height: 320px;
+  }
 `;
+
 
 export const Img = styled.img`
   display: block;
@@ -63,5 +75,10 @@ export const Img = styled.img`
     width: 100%;
     max-width: 556px;
     margin-left: initial;
+  }
+
+  @media ${device.tabletsAndUp} {
+    height: 320px;
+    margin-left: -80px;
   }
 `;

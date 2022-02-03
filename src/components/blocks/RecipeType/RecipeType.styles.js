@@ -13,6 +13,10 @@ export const StyledRecipeType = styled.ul`
   @media ${device.landscapePhonesAndUp} {
     width: initial;
   }
+
+  @media ${device.tabletsAndUp} {
+    width: 550px;
+  }
 `;
 
 export const Item = styled.li`

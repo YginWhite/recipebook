@@ -33,6 +33,13 @@ export const Items = styled.div`
     flex-wrap: wrap;
     gap: 1em;
   }
+
+  @media ${device.tabletsAndUp} {
+    width: 80%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2em;
+  }
 `;
 
 export const Button = styled.button`

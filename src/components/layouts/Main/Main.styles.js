@@ -13,6 +13,10 @@ export const StyledMain = styled.section`
   	@media ${device.landscapePhonesAndUp} {
     	margin-left: initial;
   	}
+
+    @media ${device.tabletsAndUp} {
+      margin-left: 2em;
+    }
 	}
 `;
 
@@ -27,6 +31,10 @@ export const Header = styled.header`
   	@media ${device.landscapePhonesAndUp} {
     	padding-left: initial;
   	}
+
+    @media ${device.tabletsAndUp} {
+      padding-left: 2em;
+    }
 	}
 `;
 

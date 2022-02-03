@@ -22,6 +22,10 @@ export const StyledDishType = styled.ul`
     height: initial;
     margin-left: initial;
   }
+
+  @media ${device.tabletsAndUp} {
+    margin-left: -1.8em;
+  }
 `;
 
 
@@ -34,6 +38,12 @@ export const Item = styled.li`
 
   @media ${device.landscapePhonesAndUp} {
     transform: initial;
+  }
+
+  @media ${device.tabletsAndUp} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 
@@ -56,6 +66,12 @@ export const Flag = styled.div`
     height: 7px;
     margin-bottom: 10px;
   }
+
+  @media ${device.tabletsAndUp} {
+    width: 8px;
+    height: 8px;
+    margin: 0;
+  }
 `;
 
 
@@ -70,5 +86,9 @@ export const Header = styled.h2`
 
   @media ${device.landscapePhonesAndUp} {
     font-size: 0.8em;
+  }
+
+  @media ${device.tabletsAndUp} {
+    font-size: 0.75em;
   }
 `;

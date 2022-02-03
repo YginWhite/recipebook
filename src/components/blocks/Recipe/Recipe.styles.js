@@ -22,6 +22,11 @@ export const StyledRecipe = styled.article`
     position: initial;
   }
 
+  @media ${device.tabletsAndUp} {
+    width: 550px;
+    margin-left: -0.3em;
+  }
+
   section.recipe-ingredients {
   	margin-top: 1.146em;
   }
