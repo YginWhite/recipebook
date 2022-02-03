@@ -19,6 +19,9 @@ export const Header = styled.header`
 export const Items = styled.div`
 	display: flex;
   gap: 3.035em;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
 
   @media ${device.smallDevices} {
     width: 74%;
