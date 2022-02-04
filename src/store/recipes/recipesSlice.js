@@ -3,26 +3,32 @@ import { api, recipesAPI } from '../../services/api';
 import { utils } from '../../utils/utils';
 import { storage } from '../../services/storage';
 
-//const RECIPES_REQUESTED = 'recipes/recipesRequested';
-//const RECIPES_RECEIVED = 'recipes/recipesReceived';
+const RECIPES_REQUESTED = 'recipes/recipesRequested';
+const RECIPES_RECEIVED = 'recipes/recipesReceived';
 const RECIPES_LOADED = 'recipes/recipesLoaded';
 const RECIPES_CURRENT_RECIPE_ID_IS_SET = 'recipes/currentRecipeIdIsSet';
 const RECIPES_LAST_DISPLAYED_RECIPE_IND_IS_SET = 'recipes/lastDisplayedRecipeIndIsSet';
 const RECIPES_AMOUNT_OF_RECIPES_IS_SET = 'recipes/amountOfRecipesIsSet';
+const RECIPES_LOADED_RECIPES_ARE_OVER = 'recipes/loadedRecipesAreOver';
 
 
 const initialState = {
 	data: [],								      // recipes data
 	isLoading: false,             // loading status
 	currentRecipeId: null,	      // current displayed recipe's id
-	amount: null,                    // number of displayed recipes 
+	amount: null,                 // number of displayed recipes 
 	lastDisplayedRecipeInd: null, // ind of the last displayed recipe at a time
-	offset: 0                     // the number of recipes to skip when fetching from the server 
+	offset: 0,                    // the number of recipes to skip when fetching from the server,
+	loadedRecipesOver: false			// flag shows that no more recipes to display 
 };
 
 
 export default function recipesReducer(state = initialState, action) {
 	switch (action.type) {
+		case RECIPES_REQUESTED:
+			return { ...state, isLoading: true };
+		case RECIPES_RECEIVED:
+			return { ...state, isLoading: false };
 		case RECIPES_LOADED:
 			return { ...state, data: [ ...state.data, ...action.payload ] };
 		case RECIPES_CURRENT_RECIPE_ID_IS_SET:
@@ -31,18 +37,21 @@ export default function recipesReducer(state = initialState, action) {
 			return { ...state, lastDisplayedRecipeInd: action.payload };
 		case RECIPES_AMOUNT_OF_RECIPES_IS_SET:
 			return { ...state, amount: action.payload };
+		case RECIPES_LOADED_RECIPES_ARE_OVER:
+			return { ...state, loadedRecipesOver: action.payload };
 		default:
 			return state;
 	}
 }
 
 
-//export const recipesRequested = () => ({ type: RECIPES_REQUESTED });
-//export const recipesReceived = () => ({ type: RECIPES_RECEIVED });
+export const recipesRequested = () => ({ type: RECIPES_REQUESTED });
+export const recipesReceived = () => ({ type: RECIPES_RECEIVED });
 export const recipesLoaded = (recipes) => ({ type: RECIPES_LOADED, payload: recipes });
 export const currentRecipeIdIsSet = (id) => ({ type: RECIPES_CURRENT_RECIPE_ID_IS_SET, payload: id });
 export const lastDisplayedRecipeIndIsSet = (ind) => ({ type: RECIPES_LAST_DISPLAYED_RECIPE_IND_IS_SET, payload: ind });
 export const amountOfRecipesIsSet = (amount) => ({ type: RECIPES_AMOUNT_OF_RECIPES_IS_SET, payload: amount });
+export const loadedRecipesAreOver = (flag) => ({ type: RECIPES_LOADED_RECIPES_ARE_OVER, payload: flag });
 
 
 export const changeDisplayedRecipesAmount = (amount) =>
@@ -83,6 +92,7 @@ export const selectCurrentRecipeId = state => state.recipes.currentRecipeId;
 export const selectLastDisplayedRecipeInd = state => state.recipes.lastDisplayedRecipeInd;
 export const selectLoadedRecipesAmount = state => state.recipes.data.length;
 export const selectDispalyedRecipesAmount = state => state.recipes.amount;
+export const selectLoadedRecipesOver = state => state.recipes.loadedRecipesOver;
 
 export const selectCurrentRecipe = createSelector(
 	selectRecipes,
@@ -190,25 +200,45 @@ export const loadRecipes = () =>
 
 // export const fetchRecipes = (query, offset) =>
 // 	async (dispatch, getState) => {
-// 		const response = await recipesAPI.searchRecipes(query, offset);
-// 		console.log(response);
+// 		//const response = await recipesAPI.searchRecipes(query, offset);
+// 		console.log('recipes fetched');
 // 	}
 
-export const fetchRecipes = () =>
+export const fetchMoreRecipes = (query, offset) =>
 	async (dispatch, getState) => {
-		return new Promise((resolve, reject) => {
-			setTimeout(() => {
-				const recipes = api.getRecipes();
-				dispatch(recipesLoaded(recipes));
-				dispatch(currentRecipeIdIsSet(recipes[0].id));
+		dispatch(recipesRequested());
+		const state = getState().recipes;
+		try {
+			const response = await recipesAPI.searchRecipes('', 10);
+			const recipes = response.data.results;
+			console.log(recipes);
+			dispatch(recipesLoaded(recipes));
+			dispatch(currentRecipeIdIsSet(recipes[0].id));
+			dispatch(lastDisplayedRecipeIndIsSet(state.data.length + recipes.length - 1));
 
-				//storage.setRecipes(recipes);
+		} catch (err) {
+			console.log(err);
+		} finally {
+			dispatch(recipesReceived());
+		}
+	}
 
-				resolve();
 
-				// const state = getState();
-				// const data = selectRecipeDishTypes(state, 639752);
-				// console.log(data);
-			}, 1000);
-		});
-	};
+// export const fetchRecipes = () =>
+// 	async (dispatch, getState) => {
+// 		return new Promise((resolve, reject) => {
+// 			setTimeout(() => {
+// 				const recipes = api.getRecipes();
+// 				dispatch(recipesLoaded(recipes));
+// 				dispatch(currentRecipeIdIsSet(recipes[0].id));
+
+// 				//storage.setRecipes(recipes);
+
+// 				resolve();
+
+// 				// const state = getState();
+// 				// const data = selectRecipeDishTypes(state, 639752);
+// 				// console.log(data);
+// 			}, 1000);
+// 		});
+// 	};

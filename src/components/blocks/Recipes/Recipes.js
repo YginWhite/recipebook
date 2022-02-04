@@ -12,7 +12,8 @@ import {
 	selectDispalyedRecipesAmount,
 
 	currentRecipeIdIsSet,
-	lastDisplayedRecipeIndIsSet
+	lastDisplayedRecipeIndIsSet,
+	loadedRecipesAreOver
 } from '../../../store/recipes/recipesSlice';
 
 const Recipes = () => {
@@ -38,7 +39,13 @@ const Recipes = () => {
 		if (nextLastDisplayedRecipeInd > loadedRecipesAmount - 1) {
 			nextLastDisplayedRecipeInd = loadedRecipesAmount - 1;
 		}
-		dispatch(lastDisplayedRecipeIndIsSet(nextLastDisplayedRecipeInd));
+
+		if (nextLastDisplayedRecipeInd === lastDisplayedRecipeInd) {
+			dispatch(loadedRecipesAreOver(true));
+		} else {
+			dispatch(lastDisplayedRecipeIndIsSet(nextLastDisplayedRecipeInd));
+		}
+		
 	}
 
 	return (
