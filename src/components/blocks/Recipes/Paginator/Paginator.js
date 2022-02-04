@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { goRecipesAhead, goRecipesBack } from '../../../../store/recipes/recipesSlice';
+import { goRecipesAhead, goRecipesBack } from '../../../../store/pagination/paginationSlice';
 import { Button } from './Paginator.styles';
 
 const Paginator = ({ children }) => {
