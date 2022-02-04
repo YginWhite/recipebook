@@ -1,0 +1,28 @@
+import styled from 'styled-components';
+import { device } from '../../../../utils/media';
+
+export const Button = styled.button`
+	height: 50px;
+	width: 50px;
+	border: 0px solid #FFFFFF;
+  border-width: 1.69px 1.97px;
+  border-radius: 25px;
+  box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
+  background-color: inherit;
+  cursor: pointer;
+  color: #969696;
+  font-weight: 500;
+  font-size: 0.944em;
+
+  @media ${device.smallDevices} {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+  }
+
+  @media ${device.landscapePhonesAndUp} {
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+  }
+`;
