@@ -86,6 +86,40 @@ export const changeDisplayedRecipesAmount = (amount) =>
 	};
 
 
+export const goRecipesAhead = () => 
+	(dispatch, getState) => {
+		const state = getState().recipes;
+		const oldLastInd = state.lastDisplayedRecipeInd;
+		const loadedAmount = state.data.length;
+		const displayedAmount = state.amount;
+
+		let newLastInd = oldLastInd + displayedAmount;
+		if (newLastInd > loadedAmount - 1) {
+			newLastInd = loadedAmount - 1;
+		}
+
+		if (newLastInd === oldLastInd) {
+			dispatch(loadedRecipesAreOver(true));
+		} else {
+			dispatch(lastDisplayedRecipeIndIsSet(newLastInd));
+		}
+	};
+
+
+export const goRecipesBack = () => 
+	(dispatch, getState) => {
+		const state = getState().recipes;
+		const oldLastInd = state.lastDisplayedRecipeInd;
+		const displayedAmount = state.amount;
+
+		let newLastInd = oldLastInd - displayedAmount;
+		if (newLastInd < displayedAmount - 1) {
+			newLastInd = displayedAmount - 1;
+		}
+		dispatch(lastDisplayedRecipeIndIsSet(newLastInd));
+	};
+
+
 //export const selectLoadingFlag = state => state.recipes.isLoading;
 export const selectRecipes = state => state.recipes.data;
 export const selectCurrentRecipeId = state => state.recipes.currentRecipeId;
