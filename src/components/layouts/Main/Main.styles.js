@@ -1,56 +1,54 @@
 import styled from 'styled-components';
 import { device } from '../../../utils/media';
 
+
+export const Header = styled.header``;
+
+
+export const FlexBody = styled.div`
+	display: flex;
+  flex-direction: column;
+
+  @media ${device.tabletsAndUp} {
+    flex-direction: row; 
+    align-items: center;
+  }
+
+  @media ${device.desctops} {
+    flex-direction: row; 
+    align-items: center;
+  }
+`;
+
+
+export const Footer = styled.div``;
+
+
 export const StyledMain = styled.section`
-	.recipes {
-		margin-top: 1.484em;
-		margin-left: 3.709em;
+  ${Header} {
+    @media ${device.tabletsAndUp} {
+      margin-left: 2em;
+    }
 
-		@media ${device.smallDevices} {
-    	margin-left: initial;
-  	}
+    @media ${device.desctops} {
+      margin-left: 3.709em;
+    }
+  }
 
-  	@media ${device.landscapePhonesAndUp} {
-    	margin-left: initial;
-  	}
+  ${FlexBody} {
+    margin-top: 1.249em;
+    margin-left: 0.338em;
+  }
+
+  ${Footer} {
+    margin-top: 1.484em;
 
     @media ${device.tabletsAndUp} {
       margin-left: 2em;
     }
-	}
-`;
 
-export const Header = styled.header`
-	nav {
-		padding-left: 3.709em;
-
-		@media ${device.smallDevices} {
-    	padding-left: initial;
-  	}
-
-  	@media ${device.landscapePhonesAndUp} {
-    	padding-left: initial;
-  	}
-
-    @media ${device.tabletsAndUp} {
-      padding-left: 2em;
+    @media ${device.desctops} {
+       margin-left: 3.709em;
     }
-	}
-`;
-
-export const Body = styled.div`
-	display: flex;
-	align-items: center;
-	padding-top: 1.249em;
-	padding-left: 0.338em;
-
-	@media ${device.smallDevices} {
-    flex-direction: column; 
-    align-items: initial;
-  }
-
-  @media ${device.landscapePhonesAndUp} {
-    flex-direction: column; 
-    align-items: initial;
   }
 `;

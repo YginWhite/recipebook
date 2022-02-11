@@ -5,7 +5,7 @@ import DishType from '../../blocks/DishType/DishType';
 import Recipe from '../../blocks/Recipe/Recipe';
 import Recipes from '../../blocks/Recipes/Recipes';
 
-import { StyledMain, Header, Body } from './Main.styles';
+import { StyledMain, Header, FlexBody, Footer } from './Main.styles';
 
 const Main = () => {
 	return (
@@ -14,12 +14,14 @@ const Main = () => {
 				<RecipeType/>
 			</Header>
 
-			<Body>
+			<FlexBody>
 				<DishType/>
 				<Recipe/>
-			</Body>
+			</FlexBody>
 			
-			<Recipes/>
+			<Footer>
+				<Recipes/>
+			</Footer>
 		</StyledMain>
 	);
 };
