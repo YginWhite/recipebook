@@ -6,7 +6,8 @@ import { fetchMoreRecipes } from './store/recipes/recipesSlice';
 import { changeDisplayedRecipesAmount, selectLoadedRecipesOver } from './store/pagination/paginationSlice';
 import { useWindowSize } from './utils/hooks';
 import { utils } from './utils/utils';
-import './App.css';
+import { StyledApp, Page } from './App.styles';
+
 
 function App() {
   const [width, height] = useWindowSize();
@@ -30,13 +31,13 @@ function App() {
   }, [loadedRecipesIsOver]);
 
   return (
-    <>
+    <StyledApp>
       {isInitialized &&
-      	<>
+      	<Page>
       		<HomePage/>
-      	</>
+      	</Page>
       }
-    </>
+    </StyledApp>
   );
 }
 
