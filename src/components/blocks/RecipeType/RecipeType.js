@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import { StyledRecipeType, Item } from './RecipeType.styles';
+import { StyledRecipeType, Item, Title } from './RecipeType.styles';
+
 
 const RecipeType = () => {
 	const types = ['All', 'Chiken', 'Fish', 'Fruits', 'Pasta', 'Pakistani', 'Chinese'];
@@ -12,12 +13,8 @@ const RecipeType = () => {
 		<nav>
 			<StyledRecipeType>
 				{types.map(type => (
-					<Item 
-						key={type}
-						selected={type === selected}
-						onClick={(e) => onItemClicked(type)}
-					>
-						<h2>{type}</h2>
+					<Item key={type} onClick={(e) => onItemClicked(type)}>
+						<Title selected={type === selected}>{type}</Title>
 					</Item>
 				))}
 			</StyledRecipeType>
