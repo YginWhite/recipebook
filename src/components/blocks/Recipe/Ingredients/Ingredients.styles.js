@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { device } from '../../../../utils/media';
 
-export const StyledIngredients = styled.section``;
 
 export const Header = styled.header`
   h4 {
@@ -10,25 +9,35 @@ export const Header = styled.header`
   }
 `;
 
+
 export const Items = styled.div`
-	width: 291.55px;
   display: flex;
   align-content: space-between;
   justify-content: space-between;
   flex-wrap: wrap;
-  row-gap: 0.934em;
-
-  @media ${device.smallDevices} {
-    width: initial;
-    row-gap: 0.5em;
-  }
+  row-gap: 0.5em;
 
   @media ${device.landscapePhonesAndUp} {
-    width: initial;
     row-gap: 0.7em;
+  }
+
+  @media ${device.tabletsAndUp} {
+    width: 291.55px;
+    row-gap: 0.934em;
+  }
+
+  @media ${device.desctops} {
+    width: 291.55px;
+    row-gap: 0.934em;
   }
 `;
 
-export const Buttons = styled.div`
-	margin-top: 1.043em;
+
+export const Buttons = styled.div``;
+
+
+export const StyledIngredients = styled.section`
+  ${Buttons} {
+    margin-top: 1.043em;
+  }
 `;
