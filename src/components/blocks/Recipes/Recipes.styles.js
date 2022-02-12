@@ -18,29 +18,18 @@ export const Header = styled.header`
 
 export const Items = styled.div`
 	display: flex;
-  gap: 3.035em;
+  gap: 1em;
   justify-content: center;
   flex-wrap: wrap;
-  width: 90%;
-
-  @media ${device.smallDevices} {
-    width: 74%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1em;
-  }
-
-  @media ${device.landscapePhonesAndUp} {
-    width: 74%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1em;
-  }
+  width: 74%;
 
   @media ${device.tabletsAndUp} {
     width: 80%;
-    justify-content: center;
-    flex-wrap: wrap;
     gap: 1.2em;
+  }
+
+  @media ${device.desctops} {
+    width: 90%;
+    gap: 3.035em;
   }
 `;
