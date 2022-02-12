@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { device } from '../../../../../utils/media';
 
 export const StyledNutrient = styled.div`
-	width: 70.14px;
-  height: 80.93px;
+  width: 50px;
+  height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -14,9 +14,19 @@ export const StyledNutrient = styled.div`
   border-radius: 0.439em;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
 
-  @media ${device.smallDevices} {
-    width: 50px;
-    height: 60px;
+  @media ${device.landscapePhonesAndUp} {
+    width: 70.14px;
+    height: 80.93px;
+  }
+
+  @media ${device.tabletsAndUp} {
+    width: 70.14px;
+    height: 80.93px;
+  }
+
+  @media ${device.desctops} {
+    width: 70.14px;
+    height: 80.93px;
   }
 `;
 
