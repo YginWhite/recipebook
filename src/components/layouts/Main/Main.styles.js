@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { device } from '../../../utils/media';
 import { StyledDishType } from '../../blocks/DishType/DishType.styles';
+import { StyledRecipe } from '../../blocks/Recipe/Recipe.styles';
 
 
 export const Header = styled.header``;
@@ -47,6 +48,12 @@ export const StyledMain = styled.section`
 
       @media ${device.desctops} {
         margin-left: -1.438em;
+      }
+    }
+
+    ${StyledRecipe} {
+      @media ${device.tabletsAndUp} {
+        margin-left: -0.3em;
       }
     }
   }

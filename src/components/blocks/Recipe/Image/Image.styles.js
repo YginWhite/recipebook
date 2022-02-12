@@ -1,54 +1,53 @@
 import styled from 'styled-components';
 import { device } from '../../../../utils/media';
 
+
 export const StyledImage = styled.section`
-	position: absolute;
-  right: -212px;
-  top: 45px;
-  border-radius: 229px;
+  border-radius: 1em;
   border: 0.313em solid white;
   overflow: hidden;
-  box-shadow: 0px 7px 40px -12px rgba(0,0,0,0.3);
-
-  @media ${device.smallDevices} {
-    position: initial;
-    right: initial;
-    top: initial;
-    border-radius: 1em;
-    margin-top: 1em;
-    box-shadow: 0px 7px 20px -12px rgba(0,0,0,0.3);
-  }
+  box-shadow: 0px 7px 20px -12px rgba(0,0,0,0.3);
 
   @media ${device.landscapePhonesAndUp} {
-    position: initial;
-    right: initial;
-    top: initial;
-    border-radius: 1em;
-    box-shadow: 0px 7px 20px -12px rgba(0,0,0,0.3);
     max-width: 556px;
-    margin: 0 auto;
-    margin-top: 1em;
   }
 
   @media ${device.tabletsAndUp} {
-    right: -164px;
-    top: 75px;
+    border-radius: 229px;
+    box-shadow: 0px 7px 40px -12px rgba(0,0,0,0.3);
+  }
+
+  @media ${device.desctops} {
+    border-radius: 229px;
+    box-shadow: 0px 7px 40px -12px rgba(0,0,0,0.3);
+  }
+`;
+
+
+export const Img = styled.img`
+  display: block;
+  width: 100%;
+
+  @media ${device.landscapePhonesAndUp} {
+    max-width: 556px;
+  }
+
+  @media ${device.tabletsAndUp} {
+    height: 320px;
+    width: initial;
+    margin-left: -80px;
+  }
+
+  @media ${device.desctops} {
+    height: 420px;
+    width: initial;
+    margin-left: -105px;
   }
 `;
 
 
 export const Container = styled.figure`
-  width: 420px;
-  height: 420px;
-
-  @media ${device.smallDevices} {
-    height: initial;
-    width: initial;
-  }
-
   @media ${device.landscapePhonesAndUp} {
-    height: initial;
-    width: initial;
     max-width: 556px;
   }
 
@@ -56,29 +55,9 @@ export const Container = styled.figure`
     width: 320px;
     height: 320px;
   }
-`;
 
-
-export const Img = styled.img`
-  display: block;
-  height: 420px;
-  margin-left: -105px;
-
-  @media ${device.smallDevices} {
-    height: initial;
-    width: 100%;
-    margin-left: initial;
-  }
-
-  @media ${device.landscapePhonesAndUp} {
-    height: initial;
-    width: 100%;
-    max-width: 556px;
-    margin-left: initial;
-  }
-
-  @media ${device.tabletsAndUp} {
-    height: 320px;
-    margin-left: -80px;
+  @media ${device.desctops} {
+    width: 420px;
+    height: 420px;
   }
 `;
