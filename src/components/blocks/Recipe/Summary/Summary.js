@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { StyledSummary, Header, Body } from './Summary.styles';
+import { StyledSummary, Header, Title, Body } from './Summary.styles';
 
 const Summary = ({ title, summary }) => {
 	return (
 		<StyledSummary>
 			<Header>
-				<h3>{title}</h3>
+				<Title>{title}</Title>
 			</Header>
 			<Body dangerouslySetInnerHTML={createMarkup(summary)}></Body>
 		</StyledSummary>
