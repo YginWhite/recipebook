@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { StyledDishType, Item, Header, Flag } from './DishType.styles';
+import { StyledDishType, Item, Title, Flag } from './DishType.styles';
 import { selectRecipeDishTypes } from '../../../store/recipes/recipesSlice';
 
 
@@ -14,7 +14,7 @@ const DishType = () => {
 				const selected = dishTypes.includes(type.toLowerCase());
 				return (
 					<Item key={type}>
-						<Header selected={selected}>{type}</Header>
+						<Title selected={selected}>{type}</Title>
 						<Flag selected={selected}></Flag>
 					</Item>
 				);
