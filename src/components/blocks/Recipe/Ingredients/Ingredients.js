@@ -6,7 +6,7 @@ import { StyledIngredients, Header, Items, Buttons } from './Ingredients.styles'
 
 const Ingredients = ({ ingredients }) => {
 	return (
-		<StyledIngredients className='recipe-ingredients'>
+		<StyledIngredients>
 			<Header><h4>Ingredients</h4></Header>
 			<Items>
 				{ingredients.map(ingredient => <Ingredient key={ingredient.name} { ...ingredient }/>)}

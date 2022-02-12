@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { device } from '../../../utils/media';
 import { StyledImage } from './Image/Image.styles';
+import { StyledNutrients } from './Nutrients/Nutrients.styles';
+import { StyledIngredients } from './Ingredients/Ingredients.styles';
 
 export const StyledRecipe = styled.article`
 	box-sizing: border-box;
@@ -21,12 +23,12 @@ export const StyledRecipe = styled.article`
     width: 623.7px;
   }
 
-  section.recipe-ingredients {
-  	margin-top: 1.146em;
+  ${StyledIngredients} {
+    margin-top: 1.146em;
   }
 
-  section.recipe-nutrients {
-  	margin-top: 1.043em;
+  ${StyledNutrients} {
+    margin-top: 1.043em;
   }
 
   ${StyledImage} {

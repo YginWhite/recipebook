@@ -10,7 +10,7 @@ export const Header = styled.header`
   }
 `;
 
-export const Composition = styled.div`
+export const Items = styled.div`
 	margin: 0.699em 0 0.944em 0;
   display: flex;
   gap: 0.944em;
