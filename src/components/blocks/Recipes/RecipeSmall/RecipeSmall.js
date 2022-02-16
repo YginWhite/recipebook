@@ -17,11 +17,11 @@ const RecipeSmall = ({ title, id, imageSrc, readyInMinutes, onClick }) => {
 
 	return (
 		<StyledRecipeSmall onClick={onRecipeClicked}>
-			<ImageContainer>
+			<ImageContainer borderType='recipe_small_img' as='figure'>
 				<Image src={imageSrc} alt='small dish'/>
 			</ImageContainer>
 			
-			<DescriptionContainer>
+			<DescriptionContainer borderType='recipe_small'>
 				<Description>
 					<Header><h4>{title}</h4></Header>
 					<ReadyInMinutes>{readyInMinutes} min cooktime</ReadyInMinutes>

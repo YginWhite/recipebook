@@ -3,14 +3,10 @@ import { device } from '../../../utils/media';
 import { StyledImage } from './Image/Image.styles';
 import { StyledNutrients } from './Nutrients/Nutrients.styles';
 import { StyledIngredients } from './Ingredients/Ingredients.styles';
+import { StyledBorder } from '../../common/Borders/Borders.styles';
 
-export const StyledRecipe = styled.article`
-	box-sizing: border-box;
+export const StyledRecipe = styled(StyledBorder)`
   padding: 1.009em 0.714em 1.997em 0.714em;
-  border-style: solid;
-  border-width: 0.431em 0.539em;
-  border-color: #FFFFFF;
-  border-radius: 1.214em;
   box-shadow: 0px 2.15814px 5.39535px rgba(0, 0, 0, 0.15);
 
   @media ${device.tabletsAndUp} {

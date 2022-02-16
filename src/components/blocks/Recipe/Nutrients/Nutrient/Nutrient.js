@@ -4,7 +4,7 @@ import { StyledNutrient, Value, Name, Unit } from './Nutrient.styles';
 
 const Nutrient = ({ name, amount, unit }) => {
 	return (
-		<StyledNutrient>
+		<StyledNutrient borderType='nutrient'>
 			<Value>{amount}</Value>
 			<Name><h5>{name}</h5></Name>
 			<Unit>{unit}</Unit>

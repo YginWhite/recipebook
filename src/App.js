@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './components/theme';  
 import HomePage from './views/HomePage/HomePage';
 import { selectIsInitializedFlag, initializeApp } from './store/app/appSlice';
 import { fetchMoreRecipes } from './store/recipes/recipesSlice';
@@ -31,13 +33,15 @@ function App() {
   }, [loadedRecipesIsOver]);
 
   return (
-    <StyledApp>
-      {isInitialized &&
-      	<Page>
-      		<HomePage/>
-      	</Page>
-      }
-    </StyledApp>
+    <ThemeProvider theme={theme}>
+      <StyledApp>
+        {isInitialized &&
+          <Page borderType='page'>
+            <HomePage/>
+          </Page>
+        }
+      </StyledApp>
+    </ThemeProvider>
   );
 }
 

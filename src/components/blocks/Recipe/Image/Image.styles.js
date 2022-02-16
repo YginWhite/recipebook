@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { device } from '../../../../utils/media';
+import { StyledBorder } from '../../../common/Borders/Borders.styles';
 
 
-export const StyledImage = styled.section`
-  border-radius: 1em;
-  border: 0.313em solid white;
+export const StyledImage = styled(StyledBorder)`
   overflow: hidden;
   box-shadow: 0px 7px 20px -12px rgba(0,0,0,0.3);
 

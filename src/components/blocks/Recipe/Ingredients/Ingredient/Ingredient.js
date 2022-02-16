@@ -7,7 +7,7 @@ import { StyledIngredient, Container, Img, Description, Header, Content } from '
 const Ingredient = ({ name, original, imgSrc, imageName }) => {
 	return (
 		<StyledIngredient>
-			<Container>
+			<Container borderType='ingredient_image' as='figure'>
 				<Img src={imgSrc} alt={imageName}/>
 			</Container>
 			<Description>

@@ -1,17 +1,14 @@
 import styled from 'styled-components';
 import { device } from '../../../../../utils/media';
+import { StyledBorder } from '../../../../common/Borders/Borders.styles';
 
-export const StyledNutrient = styled.div`
+export const StyledNutrient = styled(StyledBorder)`
   width: 50px;
   height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  box-sizing: border-box;
-  border: 0px solid #FFFFFF;
-  border-width: 1.05px 0.97px;
-  border-radius: 0.439em;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
 
   @media ${device.landscapePhonesAndUp} {

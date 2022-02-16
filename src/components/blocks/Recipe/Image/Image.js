@@ -6,7 +6,7 @@ import dish from '../../../../assets/images/dish.png';
 
 const Image = ({ src }) => {
 	return (
-		<StyledImage>
+		<StyledImage borderType='recipe_img' as='section'>
       <Container>
         <Img src={src} alt='dish'/>
       </Container>

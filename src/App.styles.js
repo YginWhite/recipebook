@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { device } from './utils/media';
+import { StyledBorder } from './components/common/Borders/Borders.styles';
 
 
 export const StyledApp = styled.div`
@@ -22,13 +23,8 @@ export const StyledApp = styled.div`
 `;
 
 
-export const Page = styled.div`
-	box-sizing: border-box;
+export const Page = styled(StyledBorder)`
 	padding: 0.3em 0.7em 1em 0.7em;
-  border-style: solid;
-  border-width: 0.419em 0.27em;
-  border-color: #FFFFFF;
-  border-radius: 1.25em;
   background-color: #F0F7FF;
 
   @media ${device.landscapePhonesAndUp} {

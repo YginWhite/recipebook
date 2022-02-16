@@ -24,7 +24,7 @@ const Recipe = () => {
 	const imageSrc = useSelector(selectRecipeImgSrc);
 
 	return (
-		<StyledRecipe>
+		<StyledRecipe borderType='recipe' as='article'>
 			<Summary { ...summary } />
 			<Image src={imageSrc}/>
 			<Ingredients ingredients={ingredients}/>

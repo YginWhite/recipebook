@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { device } from '../../../../utils/media';
+import { StyledBorder } from '../../../common/Borders/Borders.styles';
 
 
 export const StyledRecipeSmall = styled.div`
@@ -17,8 +18,7 @@ export const StyledRecipeSmall = styled.div`
 `;
 
 
-export const ImageContainer = styled.figure`
-  box-sizing: border-box;
+export const ImageContainer = styled(StyledBorder)`
   position: absolute;
   top: 0;
   left: 22.66px;
@@ -26,8 +26,6 @@ export const ImageContainer = styled.figure`
   width: 94.04px;
   height: 94.96px;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
-  border: 2px solid white;
-  border-radius: 50px;
   overflow: hidden;
 
   @media ${device.smallDevices} {
@@ -41,12 +39,8 @@ export const Image = styled.img`
 `;
 
 
-export const DescriptionContainer = styled.div`
-  box-sizing: border-box;
+export const DescriptionContainer = styled(StyledBorder)`
   height: 160px;
-  border: 0px solid #FFFFFF;
-  border-width: 1.69px 1.97px;
-  border-radius: 0.439em;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
 
   @media ${device.smallDevices} {

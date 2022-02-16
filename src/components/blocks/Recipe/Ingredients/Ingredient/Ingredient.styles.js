@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { device } from '../../../../../utils/media';
+import { StyledBorder } from '../../../../common/Borders/Borders.styles';
 
 
 export const StyledIngredient = styled.div`
@@ -25,17 +26,12 @@ export const StyledIngredient = styled.div`
 `;
 
 
-export const Container = styled.figure`
-  box-sizing: border-box;
+export const Container = styled(StyledBorder)`
   padding: 0.353em 0.682em 0.397em 0.679em;
-  border-style: solid;
-  border-width: 0.51px 0.68px;
-  border-color: #FFFFFF;
-  border-radius: 0.439em;
   box-shadow: 0px 1.75848px 4.39621px rgba(0, 0, 0, 0.15);
 
   @media ${device.tabletsAndUp} {
-   width: 49.39px;
+    width: 49.39px;
   }
 
   @media ${device.desctops} {
