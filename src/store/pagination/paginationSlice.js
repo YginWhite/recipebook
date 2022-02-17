@@ -38,8 +38,10 @@ export const changeDisplayedRecipesAmount = (amount) =>
  		const loadedRecipesNumber = state.recipes.data.length;
 
  		dispatch(amountOfRecipesIsSet(amount));
- 		
- 		if (lastDisplayedRecipeInd) {
+
+ 		// this check is need because of changeDisplayedRecipesAmount called befor loadRecipes
+ 		// and we don't know lastDisplayedRecipeInd yet
+ 		if (lastDisplayedRecipeInd !== undefined) {
  			let newInd;
  			if (oldAmount > amount) {
  				newInd = lastDisplayedRecipeInd - (oldAmount - amount);

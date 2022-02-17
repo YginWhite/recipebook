@@ -17,10 +17,12 @@ function App() {
 	const isInitialized = useSelector(selectIsInitializedFlag);
   const loadedRecipesIsOver = useSelector(selectLoadedRecipesOver);
 
+  // this effect will be called second due to loadRecipes is async
 	useEffect(() => {
 		dispatch(initializeApp());
 	}, []);
 
+  // this effect will be called first
   useEffect(() => {
     const amount = utils.calcDisplayedRecipesAmount(width);
     dispatch(changeDisplayedRecipesAmount(amount));
