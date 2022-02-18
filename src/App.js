@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './components/theme';  
 import HomePage from './views/HomePage/HomePage';
 import { selectIsInitializedFlag, initializeApp } from './store/app/appSlice';
-import { fetchMoreRecipes } from './store/recipes/recipesSlice';
+import { fetchRecipes, selectSearchQuery } from './store/recipes/recipesSlice';
 import { changeDisplayedRecipesAmount, selectLoadedRecipesOver } from './store/pagination/paginationSlice';
 import { useWindowSize } from './utils/hooks';
 import { utils } from './utils/utils';
@@ -17,6 +17,7 @@ function App() {
 	const dispatch = useDispatch();
 	const isInitialized = useSelector(selectIsInitializedFlag);
   const loadedRecipesIsOver = useSelector(selectLoadedRecipesOver);
+  const searchQuery = useSelector(selectSearchQuery);
 
   // this effect will be called second due to loadRecipes is async
 	useEffect(() => {
@@ -31,9 +32,13 @@ function App() {
 
   useEffect(() => {
     if (loadedRecipesIsOver) {
-      //dispatch(fetchMoreRecipes());
+      //dispatch(fetchRecipes());
     }
   }, [loadedRecipesIsOver]);
+
+  useEffect(() => {
+    //dispatch(fetchRecipes(true));
+  }, [searchQuery]);
 
   return (
     <ThemeProvider theme={theme}>

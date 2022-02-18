@@ -11,7 +11,7 @@ export const api = {
 const RECIPES_API_KEY = process.env.REACT_APP_RECIPES_API_KEY;
 
 export const recipesAPI = {
-	searchRecipes(query, offset) {
+	searchRecipes(query, offset, number) {
 		return axios
 			.get('https://api.spoonacular.com/recipes/complexSearch', {
 				params: {
@@ -21,7 +21,7 @@ export const recipesAPI = {
 					addRecipeNutrition: true,
 					fillIngredients: true,
 					offset,
-					number: 5
+					number
 				}
 			})
 			.then(response => response);
