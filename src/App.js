@@ -9,6 +9,7 @@ import { changeDisplayedRecipesAmount, selectLoadedRecipesOver } from './store/p
 import { useWindowSize } from './utils/hooks';
 import { utils } from './utils/utils';
 import { StyledApp, Page } from './App.styles';
+import { PrimaryFontStyle } from './components/common/Fonts/Fonts.styled';
 
 
 function App() {
@@ -39,7 +40,9 @@ function App() {
       <StyledApp>
         {isInitialized &&
           <Page borderType='page'>
-            <HomePage/>
+          	<PrimaryFontStyle>
+          		<HomePage/>
+          	</PrimaryFontStyle>
           </Page>
         }
       </StyledApp>

@@ -4,6 +4,8 @@ import RecipeSmall from './RecipeSmall/RecipeSmall';
 import Paginator from './Paginator/Paginator';
 import { StyledRecipes, Header, Items } from './Recipes.styles';
 import { selectShortRecipesDescription, currentRecipeIdIsSet } from '../../../store/recipes/recipesSlice';
+import { HeadingFontStyle } from '../../common/Fonts/Fonts.styled';
+
 
 const Recipes = () => {
 	const dispatch = useDispatch();
@@ -13,7 +15,9 @@ const Recipes = () => {
 
 	return (
 		<StyledRecipes className='recipes'>
-			<Header><h3>More recipies</h3></Header>
+			<Header>
+				<h3><HeadingFontStyle>More recipies</HeadingFontStyle></h3>
+			</Header>
 			<div>
 				<Paginator>
 					<Items>

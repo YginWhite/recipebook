@@ -24,7 +24,7 @@ export const theme = {
 			}
 		},
 		heading: {
-			family: 'font-family: Arima Madurai, cursive'
+			family: 'Arima Madurai, cursive'
 		}
 	},
 
