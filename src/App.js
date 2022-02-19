@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './components/theme';  
+import { Routes, Route } from 'react-router-dom';
 import HomePage from './views/HomePage/HomePage';
+import RecipePage from './views/RecipePage/RecipePage';
+import LoginPage from './views/LoginPage/LoginPage';
 import { selectIsInitializedFlag, initializeApp } from './store/app/appSlice';
 import { fetchRecipes, selectSearchQuery } from './store/recipes/recipesSlice';
 import { changeDisplayedRecipesAmount, selectLoadedRecipesOver } from './store/pagination/paginationSlice';
@@ -41,17 +42,19 @@ function App() {
   }, [searchQuery]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <StyledApp>
-        {isInitialized &&
-          <Page borderType='page'>
-          	<PrimaryFontStyle>
-          		<HomePage/>
-          	</PrimaryFontStyle>
-          </Page>
-        }
-      </StyledApp>
-    </ThemeProvider>
+    <StyledApp>
+      {isInitialized &&
+        <Page borderType='page'>
+          <PrimaryFontStyle>
+            <Routes>
+              <Route path='/' element={<HomePage />} />
+              <Route path='recipe' element={<RecipePage />} />
+              <Route path='login' element={<LoginPage />} />
+            </Routes>
+          </PrimaryFontStyle>
+        </Page>
+      }
+    </StyledApp>
   );
 }
 

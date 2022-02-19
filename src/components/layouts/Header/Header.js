@@ -1,13 +1,16 @@
 import React from 'react';
+import { StyledHeader } from './Header.styles';
 import Logo from '../../blocks/Logo/Logo';
+import Nav from '../../blocks/Nav/Nav';
 
 const Header = () => {
 	return (
-		<section>
+		<StyledHeader>
 			<header>
 				<Logo/>
+				<Nav/>
 			</header>
-		</section>
+		</StyledHeader>
 	);
 };
 
