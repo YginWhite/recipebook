@@ -8,10 +8,10 @@ import {
 	selectRecipeImgSrc
 } from '../../../store/recipes/recipesSlice';
 
-import Summary from './Summary/Summary';
+import Summary from '../Summary/Summary';
 import Ingredients from './Ingredients/Ingredients';
 import Nutrients from './Nutrients/Nutrients';
-import Image from './Image/Image';
+import Image from '../Image/Image';
 
 import { StyledRecipe } from './Recipe.styles';
 
