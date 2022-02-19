@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyledSummary, Header, Title, Body } from './Summary.styles';
-import { HeadingFontStyle, SecondaryFontStyle } from '../../../common/Fonts/Fonts.styled';
+import { HeadingFontStyle, SecondaryFontStyle } from '../../common/Fonts/Fonts.styled';
 
-const Summary = ({ title, summary }) => {
+const Summary = ({ title, summary, children }) => {
 	return (
 		<StyledSummary>
 			<Header>
@@ -11,6 +11,7 @@ const Summary = ({ title, summary }) => {
 				</Title>
 			</Header>
 			<Body>
+				{children}
 				<SecondaryFontStyle dangerouslySetInnerHTML={createMarkup(summary)}></SecondaryFontStyle>
 			</Body>
 		</StyledSummary>
