@@ -34,6 +34,7 @@ export const Value = styled.div`
 `;
 
 export const Name = styled.header`
+  text-align: center;
   h5 {
     font-size: 0.811em;
     color: #000000;
