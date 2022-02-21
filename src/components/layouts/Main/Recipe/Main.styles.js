@@ -3,6 +3,7 @@ import { device } from '../../../../utils/media';
 import { StyledSummary, Body } from '../../../blocks/Summary/Summary.styles';
 import { StyledImage } from '../../../blocks/Image/Image.styles';
 import { StyledIngredients, Items, Header } from '../../../blocks/Ingredients/Ingredients.styles';
+import { StyledNutrients } from '../../../blocks/Nutrients/Nutrients.styles';
 
 export const StyledMain = styled.div`
 	${StyledImage} {
@@ -33,5 +34,9 @@ export const StyledMain = styled.div`
     width: 100%;
     gap: 1em;
     justify-content: initial;
+  }
+
+  ${StyledNutrients} {
+    margin-top: 1.5em;
   }
 `;
