@@ -1,28 +1,12 @@
 import styled from 'styled-components';
-import { device } from '../../../../../utils/media';
-import { StyledBorder } from '../../../../common/Borders/Borders.styles';
+import { device } from '../../../../utils/media';
+import { StyledBorder } from '../../../common/Borders/Borders.styles';
 
 
 export const StyledIngredient = styled.div`
   display: flex;
-
-  @media ${device.smallDevices} {
-    justify-content: space-between;
-  }
-
-  @media ${device.landscapePhonesAndUp} {
-    justify-content: space-between;
-  }
-
-  @media ${device.tabletsAndUp} {
-    width: 139.8px;
-    height: 39.57px;
-  }
-
-  @media ${device.desctops} {
-    width: 139.8px;
-    height: 39.57px;
-  }
+  width: 139.8px;
+  height: 39.57px;
 `;
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import image from '../../../../../assets/images/chicken.png';
+import image from '../../../../assets/images/chicken.png';
 
 import { StyledIngredient, Container, Img, Description, Header, Content } from './Ingredient.styles';
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import Ingredient from './Ingredient/Ingredient';
-import { Button } from '../../../common/Buttons/Buttons';
+import { Button } from '../../common/Buttons/Buttons';
 import { StyledIngredients, Header, Items, Buttons } from './Ingredients.styles';
-import { HeadingFontStyle } from '../../../common/Fonts/Fonts.styled';
+import { HeadingFontStyle } from '../../common/Fonts/Fonts.styled';
 
-const Ingredients = ({ ingredients }) => {
+const Ingredients = ({ ingredients, children }) => {
 	return (
 		<StyledIngredients>
 			<Header>
@@ -13,9 +13,8 @@ const Ingredients = ({ ingredients }) => {
 			<Items>
 				{ingredients.map(ingredient => <Ingredient key={ingredient.name} { ...ingredient }/>)}
 			</Items>
-			<Buttons>
-				<Button>View all ingredients</Button>
-			</Buttons>
+			{children && <Buttons>{children}</Buttons>}
+			
 		</StyledIngredients>
 	);
 };

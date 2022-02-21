@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../../../../utils/media';
+import { device } from '../../../utils/media';
 
 
 export const Header = styled.header`
@@ -12,7 +12,6 @@ export const Header = styled.header`
 
 export const Items = styled.div`
   display: flex;
-  align-content: space-between;
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 0.5em;
