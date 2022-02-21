@@ -133,6 +133,11 @@ export const selectShortRecipesDescription = createSelector(
 		)
 );
 
+export const selectInstructions = createSelector(
+	selectCurrentRecipe,
+	recipe => recipe.instructions
+);
+
 
 export const loadRecipes = () => 
 	async (dispatch, getState) => {
