@@ -12,9 +12,8 @@ import Summary from '../Summary/Summary';
 import Ingredients from '../Ingredients/Ingredients';
 import Nutrients from './Nutrients/Nutrients';
 import Image from '../Image/Image';
-import { Button } from '../../common/Buttons/Buttons';
-
-import { StyledRecipe } from './Recipe.styles';
+import { Button, ButtonWithoutBg } from '../../common/Buttons/Buttons';
+import { StyledRecipe, Buttons } from './Recipe.styles';
 
 const Recipe = () => {
 	const summary = useSelector(state => selectRecipeSummary(state, 289));
@@ -32,6 +31,10 @@ const Recipe = () => {
 				<Button>View all ingredients</Button>
 			</Ingredients>
 			<Nutrients nutrients={nutrients}/>
+			<Buttons>
+				<Button>Recipe</Button>
+				<ButtonWithoutBg>Add to favorites</ButtonWithoutBg>
+			</Buttons>
 		</StyledRecipe>
 	);
 };

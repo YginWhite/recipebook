@@ -16,8 +16,3 @@ export const Items = styled.div`
   flex-wrap: wrap;
   gap: 0.944em;
 `;
-
-export const Buttons = styled.div`
-  display: flex;
-  gap: 1.504em;
-`;

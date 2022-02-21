@@ -50,3 +50,8 @@ export const StyledRecipe = styled(StyledBorder)`
     }
   }
 `;
+
+export const Buttons = styled.div`
+  display: flex;
+  gap: 1.504em;
+`;
