@@ -1,35 +1,37 @@
 import styled from 'styled-components';
 import { device } from '../../../../utils/media';
-import { Body } from '../../../blocks/Summary/Summary.styles';
+import { StyledSummary, Body } from '../../../blocks/Summary/Summary.styles';
 import { StyledImage } from '../../../blocks/Image/Image.styles';
+import { StyledIngredients, Items, Header } from '../../../blocks/Ingredients/Ingredients.styles';
 
 export const StyledMain = styled.div`
 	${StyledImage} {
 		margin-top: 1em;
-  	margin-bottom: 1em;
+  	margin-bottom: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
 	}
 
-	${Body} {
-		@media ${device.tabletsAndUp} {
-			display: flex;
-			align-items: center;
-			gap: 1.5em;
-    	width: initial;
+  ${StyledSummary} {
+    margin-bottom: 1.5em;
+  }
 
-    	& > * {
-    		width: 50%;
-    	}
-  	}
+  ${Body} {
+    width: 100%;
+    line-height: 1.4;
+  }
 
-  	@media ${device.desctops} {
-  		display: flex;
-  		align-items: center;
-  		gap: 1.5em;
-    	width: initial;
+  ${StyledIngredients} {
+    margin-bottom: 1.5em;
+  }
 
-    	& > * {
-    		width: 50%;
-    	}
-  	}
-	}
+  ${Header} {
+    margin-bottom: 1em;
+  }
+
+  ${Items} {
+    width: 100%;
+    gap: 1em;
+    justify-content: initial;
+  }
 `;
