@@ -4,18 +4,20 @@ import {
 	selectRecipeSummary,
 	selectRecipeImgSrc,
 	selectRecipeIngredients,
+	selectRecipeNutritionValues
 } from '../../../../store/recipes/recipesSlice';
 import { StyledMain } from './Main.styles';
 import Summary from '../../../blocks/Summary/Summary';
 import Image from '../../../blocks/Image/Image';
 import Ingredients from '../../../blocks/Ingredients/Ingredients';
 import Instructions from '../../../blocks/Instructions/Instructions';
+import Nutrients from '../../../blocks/Nutrients/Nutrients'
 
 const Main = () => {
-	const summary = useSelector(state => selectRecipeSummary(state));
+	const summary = useSelector(selectRecipeSummary);
 	const imageSrc = useSelector(selectRecipeImgSrc);
-	const ingredients = useSelector(state => selectRecipeIngredients(state));
-	
+	const ingredients = useSelector(selectRecipeIngredients);
+	const nutrients = useSelector(selectRecipeNutritionValues);
 
 	return (
 		<StyledMain>
@@ -24,6 +26,7 @@ const Main = () => {
 			</Summary>
 			<Ingredients ingredients={ingredients}/>
 			<Instructions/>
+			<Nutrients nutrients={nutrients}/>
 		</StyledMain>
 	);
 };

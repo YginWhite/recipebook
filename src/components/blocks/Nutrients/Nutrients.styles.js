@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../../../../utils/media';
+import { device } from '../../../utils/media';
 
 export const StyledNutrients = styled.section``;
 

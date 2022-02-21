@@ -10,7 +10,7 @@ import {
 
 import Summary from '../Summary/Summary';
 import Ingredients from '../Ingredients/Ingredients';
-import Nutrients from './Nutrients/Nutrients';
+import Nutrients from '../Nutrients/Nutrients';
 import Image from '../Image/Image';
 import { Button, ButtonWithoutBg } from '../../common/Buttons/Buttons';
 import { StyledRecipe, Buttons } from './Recipe.styles';

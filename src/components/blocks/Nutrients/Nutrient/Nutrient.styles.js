@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { device } from '../../../../../utils/media';
-import { StyledBorder } from '../../../../common/Borders/Borders.styles';
+import { device } from '../../../../utils/media';
+import { StyledBorder } from '../../../common/Borders/Borders.styles';
 
 export const StyledNutrient = styled(StyledBorder)`
   width: 50px;

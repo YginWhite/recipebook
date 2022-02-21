@@ -1,7 +1,7 @@
 import React from 'react';
 import Nutrient from './Nutrient/Nutrient';
 import { StyledNutrients, Header, Items } from './Nutrients.styles';
-import { HeadingFontStyle } from '../../../common/Fonts/Fonts.styled';
+import { HeadingFontStyle } from '../../common/Fonts/Fonts.styled';
 
 
 const Nutrients = ({ nutrients }) => {
