@@ -10,8 +10,8 @@ const Summary = ({ title, summary, children }) => {
 					<HeadingFontStyle>{title}</HeadingFontStyle>
 				</Title>
 			</Header>
+			{children}
 			<Body>
-				{children}
 				<SecondaryFontStyle dangerouslySetInnerHTML={createMarkup(summary)}></SecondaryFontStyle>
 			</Body>
 		</StyledSummary>
