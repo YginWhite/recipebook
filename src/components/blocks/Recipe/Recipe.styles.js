@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { device } from '../../../utils/media';
 import { StyledImage } from '../Image/Image.styles';
 import { StyledNutrients } from './Nutrients/Nutrients.styles';
-import { StyledIngredients } from './Ingredients/Ingredients.styles';
+import { StyledIngredients } from '../Ingredients/Ingredients.styles';
 import { StyledBorder } from '../../common/Borders/Borders.styles';
 
 export const StyledRecipe = styled(StyledBorder)`

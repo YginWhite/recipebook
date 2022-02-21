@@ -9,9 +9,10 @@ import {
 } from '../../../store/recipes/recipesSlice';
 
 import Summary from '../Summary/Summary';
-import Ingredients from './Ingredients/Ingredients';
+import Ingredients from '../Ingredients/Ingredients';
 import Nutrients from './Nutrients/Nutrients';
 import Image from '../Image/Image';
+import { Button } from '../../common/Buttons/Buttons';
 
 import { StyledRecipe } from './Recipe.styles';
 
@@ -27,7 +28,9 @@ const Recipe = () => {
 		<StyledRecipe borderType='recipe' as='article'>
 			<Summary { ...summary } />
 			<Image src={imageSrc}/>
-			<Ingredients ingredients={ingredients}/>
+			<Ingredients ingredients={ingredients}>
+				<Button>View all ingredients</Button>
+			</Ingredients>
 			<Nutrients nutrients={nutrients}/>
 		</StyledRecipe>
 	);
