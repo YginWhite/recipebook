@@ -54,6 +54,7 @@ export const Item = styled.li`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transform: rotate(-90deg);
   }
 
   @media ${device.desctops} {
