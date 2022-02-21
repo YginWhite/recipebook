@@ -13,11 +13,8 @@ export const Header = styled.header`
 export const Items = styled.div`
 	margin: 0.699em 0 0.944em 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.944em;
-
-  @media ${device.smallDevices} {
-    flex-wrap: wrap;
-  }
 `;
 
 export const Buttons = styled.div`
